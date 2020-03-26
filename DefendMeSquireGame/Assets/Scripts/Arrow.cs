@@ -13,13 +13,27 @@ public class Arrow : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        ContactPoint2D contact = other.GetContact(0);
+        Vector2 contactWorldPosition = contact.point;
+        Vector2 contactLocalPosition = other.transform.worldToLocalMatrix.MultiplyPoint(contactWorldPosition);
+        transform.SetParent(other.transform);
+        transform.localPosition = contactLocalPosition;
+
+        rb.isKinematic = false;
+        rb.simulated = false;
+        collided = true;
+        GetComponent<Collider2D>().enabled = false;
+    }
+
     void Update()
     {
         Vector2 currentVelocity = rb.velocity;
-        if (velocityMeaningfullyChanged(currentVelocity)) {
+        if (velocityMeaningfullyChanged(currentVelocity) && !collided) {
             float angle = Vector2.SignedAngle(Vector2.right, currentVelocity);
             transform.rotation = Quaternion.Euler(0, 0, angle);
         }
+        cachedVelocity = currentVelocity;
     }
 
     private bool velocityMeaningfullyChanged(Vector2 currentVelocity) {

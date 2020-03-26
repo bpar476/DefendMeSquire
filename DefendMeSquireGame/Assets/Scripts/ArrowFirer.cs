@@ -25,10 +25,9 @@ public class ArrowFirer : MonoBehaviour
     }
 
     private void fireProjectile() {
-        GameObject projectile = Instantiate(projectilePrefab) as GameObject;
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
 
         Rigidbody2D projectileBody = projectile.GetComponent<Rigidbody2D>();
-        Debug.Log(normalizedTrajectory);
         projectileBody.velocity = fireVelocity * normalizedTrajectory;
     }
 }

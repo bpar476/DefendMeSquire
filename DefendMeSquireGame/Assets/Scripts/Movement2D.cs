@@ -9,7 +9,7 @@ public class Movement2D : MonoBehaviour
     private Rigidbody2D rb2d;
 
     void Start() {
-        rb2d = GetComponent<Rigidbody2D>();    
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame

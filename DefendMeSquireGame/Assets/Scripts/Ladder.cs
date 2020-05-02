@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Ladder : MonoBehaviour
 {
@@ -23,7 +21,7 @@ public class Ladder : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         if (verticalInput != 0 && playerInLadder) {
             playerOnLadder = true;
-            player.transform.Translate(new Vector3(0, Mathf.Sign(verticalInput) * actualClimbSpeed), 0);
+            player.GetComponent<Rigidbody2D>().MovePosition(new Vector2(player.transform.position.x, player.transform.position.y) + (Mathf.Sign(verticalInput) * new Vector2(0, 1) * climbSpeed));
         }
     }
 
@@ -33,7 +31,6 @@ public class Ladder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("Player")) {
-            Debug.Log("player enters ladder");
             playerInLadder = true;
 
             player = other.gameObject;
@@ -45,7 +42,6 @@ public class Ladder : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.tag.Equals("Player")) {
-            Debug.Log("player exits ladder");
             playerInLadder = false;
             playerOnLadder = false;
 

@@ -2681,6 +2681,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2055309946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055309947}
+  m_Layer: 0
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055309947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055309946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.23, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6494675967164450833}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2081270414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2748,15 +2778,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3144819334806907417, guid: da9c1388f2aea2742a03e11e6f9ff860,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3144819334806907419, guid: da9c1388f2aea2742a03e11e6f9ff860,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3144819333648331899, guid: da9c1388f2aea2742a03e11e6f9ff860,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da9c1388f2aea2742a03e11e6f9ff860, type: 3}
@@ -3057,7 +3092,7 @@ PrefabInstance:
     - target: {fileID: 6494675967403011709, guid: 5f799d010aee286408662cf8a7148eaf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.33
+      value: -3.358
       objectReference: {fileID: 0}
     - target: {fileID: 6494675967403011709, guid: 5f799d010aee286408662cf8a7148eaf,
         type: 3}
@@ -3166,26 +3201,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f799d010aee286408662cf8a7148eaf, type: 3}
---- !u!1 &6494675967164450827 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6494675967403011705, guid: 5f799d010aee286408662cf8a7148eaf,
+--- !u!4 &6494675967164450833 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6494675967403011709, guid: 5f799d010aee286408662cf8a7148eaf,
     type: 3}
   m_PrefabInstance: {fileID: 6494675967164450826}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6494675967164450828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6494675967164450827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c01604e8eabbc40a428ed5128773c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ladderMask:
-    serializedVersion: 2
-    m_Bits: 256
-  reach: 0.5
-  climbSpeed: 0.2

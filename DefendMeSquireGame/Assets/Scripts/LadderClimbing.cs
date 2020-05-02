@@ -27,15 +27,39 @@ public class LadderClimbing : MonoBehaviour
     private void FixedUpdate() {
         float vertInput = Input.GetAxis("Vertical");
         bool climbUp = vertInput > 0;
+        bool climbDown = vertInput < 0;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, reach, ladderMask);
-        if (hit.collider != null && climbUp) {
+        bool canClimb = false;
+        RaycastHit2D hitAbove = Physics2D.Raycast(transform.position, Vector2.up, reach, ladderMask);
+        if (hitAbove.collider != null) {
             // Can climb the ladder
+            canClimb = true;
+        } else {
+            RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, Vector2.down, reach, ladderMask);
+            Debug.Log(hitBelow.collider?.gameObject.name);
+            if (hitBelow.collider != null) {
+                canClimb = true;
+            }
+        }
+
+        if (canClimb && climbUp) {
             ClimbUp();
         }
+
+        if (canClimb && climbDown) {
+            ClimbDown();
+        }
+    }
+
+    private void OnDrawGizmos() {
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - reach, transform.position.z));
     }
 
     private void ClimbUp() {
         body.MovePosition(new Vector2(transform.position.x, transform.position.y) + (new Vector2(0, 1) * climbSpeed));
+    }
+
+    private void ClimbDown() {
+        body.MovePosition(new Vector2(transform.position.x, transform.position.y) + (Vector2.down * climbSpeed));
     }
 }

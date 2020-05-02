@@ -6,16 +6,18 @@ public class ArrowFirer : MonoBehaviour
 {
 
     public int shotsPerMinute;
+    public float timerOffset;
     public Vector2 trajectory;
     public float fireVelocity;
     public GameObject projectilePrefab;
     private Vector2 normalizedTrajectory;
 
-    private float timer = 0.0f;
+    private float timer;
 
     // Start is called before the first frame update
     void Start()
     {
+        timer = timerOffset;
         normalizedTrajectory = trajectory.normalized;
     }
 

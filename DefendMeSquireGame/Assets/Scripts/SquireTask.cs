@@ -5,10 +5,11 @@ using UnityEngine;
 public class SquireTask : MonoBehaviour
 {
     public float duration;
-    
+
     private SpriteRenderer myRenderer;
 
     private LoadingBar loadingBar;
+    private float completeness;
 
     private bool done;
 
@@ -22,7 +23,8 @@ public class SquireTask : MonoBehaviour
     {
         loadingBar = GetComponentInChildren<LoadingBar>();
         myRenderer = GetComponent<SpriteRenderer>();
-        if (loadingBar == null || myRenderer == null) {
+        if (loadingBar == null || myRenderer == null)
+        {
             throw new System.Exception("Task not set up properly");
         }
     }
@@ -30,40 +32,65 @@ public class SquireTask : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (done) {
+        if (done)
+        {
             return;
         }
 
         UpdateDoingTask();
 
-        if (isPlayerDoingTask) {
-            IncrementTime();
+        if (isPlayerDoingTask)
+        {
+            UpdateTaskProgress();
 
-            float completeness = time / duration;
-
-            loadingBar.SetCompleteness(completeness);
-
-            if (completeness >= 1) {
-                done = true;
-                
-                RenderCompletedTask();
-            }
-        } else {
-            time = 0.0f;
-            loadingBar.SetCompleteness(0);
+            HandleIfTaskIsComplete();
+        }
+        else
+        {
+            ResetProgress();
         }
     }
 
-    private void UpdateDoingTask() {
+    private void UpdateDoingTask()
+    {
         bool playerTryingToDotask = Input.GetAxis("Interaction") != 0;
-        if (playerTryingToDotask && playerIsOnTask) {
+        if (playerTryingToDotask && playerIsOnTask)
+        {
             isPlayerDoingTask = true;
-        } else {
+        }
+        else
+        {
             isPlayerDoingTask = false;
         }
     }
 
-    private void RenderCompletedTask() {
+    private void UpdateTaskProgress()
+    {
+        IncrementTime();
+
+        completeness = time / duration;
+
+        loadingBar.SetCompleteness(completeness);
+    }
+
+    private void HandleIfTaskIsComplete()
+    {
+        if (completeness >= 1)
+        {
+            done = true;
+
+            RenderCompletedTask();
+        }
+    }
+
+    private void ResetProgress() {
+        time = 0;
+        loadingBar.SetCompleteness(0);
+        completeness = 0;
+    }
+
+    private void RenderCompletedTask()
+    {
         myRenderer.color = Color.magenta;
     }
 
@@ -72,19 +99,24 @@ public class SquireTask : MonoBehaviour
         time += Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (IsPlayer(other.gameObject)) {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (IsPlayer(other.gameObject))
+        {
             playerIsOnTask = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if (IsPlayer(other.gameObject)) {
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (IsPlayer(other.gameObject))
+        {
             playerIsOnTask = false;
         }
     }
 
-    private bool IsPlayer(GameObject gobj) {
-            return gobj.tag == "Player";
+    private bool IsPlayer(GameObject gobj)
+    {
+        return gobj.tag == "Player";
     }
 }

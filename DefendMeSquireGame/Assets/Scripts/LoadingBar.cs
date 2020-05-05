@@ -7,19 +7,8 @@ public class LoadingBar : MonoBehaviour
 
     public List<Sprite> loadingSprites;
     private SpriteRenderer myRenderer;
-    public float duration;
-    private bool finished = false;
     private int currentIncrement = 0;
-    private float time = 0.0f;
-    private float totalTime = 0.0f;
-    private float incrementThreshold
-    {
-        get
-        {
-            return duration / increments;
-        }
-    }
-    private int increments
+    private int numIncrements
     {
         get
         {
@@ -32,51 +21,23 @@ public class LoadingBar : MonoBehaviour
         myRenderer = GetComponent<SpriteRenderer>();
     }
 
+    public void SetCompleteness(float completeness) {
+        int increment = (int) Mathf.Floor(completeness * numIncrements);
+        if (increment > numIncrements) {
+            increment = numIncrements;
+        }
+
+        currentIncrement = increment;
+    }
+
+
     private void Update()
-    {
-        if (finished)
-        {
-            return;
-        }
-
-        IncrementTime();
-
-        if (HasSurpassedLoadingIncrementDuration())
-        {
-            currentIncrement++;
-
-            SetLoadingBarSpriteToCurrentIncrement();
-
-            UpdateIfLoadingFinished();
-
-            ResetIncrementTimer();
-        }
-    }
-
-    private void IncrementTime()
-    {
-        time += Time.deltaTime;
-    }
-
-    private bool HasSurpassedLoadingIncrementDuration()
-    {
-        return time >= incrementThreshold;
+    { 
+        SetLoadingBarSpriteToCurrentIncrement();
     }
 
     private void SetLoadingBarSpriteToCurrentIncrement()
     {
         myRenderer.sprite = loadingSprites[currentIncrement];
-    }
-
-    private void UpdateIfLoadingFinished()
-    {
-        if (currentIncrement == increments)
-        {
-            finished = true;
-        }
-    }
-
-    private void ResetIncrementTimer() {
-        time -= incrementThreshold;
     }
 }

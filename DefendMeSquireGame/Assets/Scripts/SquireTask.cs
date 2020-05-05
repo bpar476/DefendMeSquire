@@ -38,13 +38,14 @@ public class SquireTask : MonoBehaviour
 
             float completeness = time / duration;
 
-            // Set loading bar progress
             loadingBar.SetCompleteness(completeness);
 
             if (completeness >= 1) {
                 done = true;
-                Debug.Log("task: " + gameObject.name + " has been completed!");
             }
+        } else {
+            time = 0.0f;
+            loadingBar.SetCompleteness(0);
         }
     }
 

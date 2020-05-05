@@ -5,6 +5,8 @@ using UnityEngine;
 public class SquireTask : MonoBehaviour
 {
     public float duration;
+    
+    private SpriteRenderer myRenderer;
 
     private LoadingBar loadingBar;
 
@@ -19,8 +21,9 @@ public class SquireTask : MonoBehaviour
     void Start()
     {
         loadingBar = GetComponentInChildren<LoadingBar>();
-        if (loadingBar == null) {
-            throw new System.Exception("loading bar is not on child component");
+        myRenderer = GetComponent<SpriteRenderer>();
+        if (loadingBar == null || myRenderer == null) {
+            throw new System.Exception("Task not set up properly");
         }
     }
 
@@ -42,6 +45,8 @@ public class SquireTask : MonoBehaviour
 
             if (completeness >= 1) {
                 done = true;
+                
+                RenderCompletedTask();
             }
         } else {
             time = 0.0f;
@@ -53,13 +58,13 @@ public class SquireTask : MonoBehaviour
         bool playerTryingToDotask = Input.GetAxis("Interaction") != 0;
         if (playerTryingToDotask && playerIsOnTask) {
             isPlayerDoingTask = true;
-            StartPerformingTask();
         } else {
-            if (isPlayerDoingTask) {
-                StopPerformingTask();
-            }
             isPlayerDoingTask = false;
         }
+    }
+
+    private void RenderCompletedTask() {
+        myRenderer.color = Color.magenta;
     }
 
     private void IncrementTime()
@@ -82,14 +87,4 @@ public class SquireTask : MonoBehaviour
     private bool IsPlayer(GameObject gobj) {
             return gobj.tag == "Player";
     }
-
-
-    void StartPerformingTask() {
-        // Start loading bar
-    }
-
-    void StopPerformingTask() {
-        // Stop loading bar
-    }
-
 }

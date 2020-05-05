@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LoadingBar : MonoBehaviour
 {
-    public float duration;
 
     public List<Sprite> loadingSprites;
-    private bool finished = false;
     private SpriteRenderer myRenderer;
+    public float duration;
+    private bool finished = false;
     private int currentIncrement = 0;
     private float time = 0.0f;
     private float totalTime = 0.0f;

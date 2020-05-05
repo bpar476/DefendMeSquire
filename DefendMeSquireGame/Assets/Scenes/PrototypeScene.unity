@@ -1823,6 +1823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb59acd21581fe45b9c66592d9da2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 2
 --- !u!61 &621617091
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2724,13 +2725,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2adc36df92615841b031d07f0c9e920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
   loadingSprites:
   - {fileID: 21300000, guid: 12764cc9bd53acf4198fec70abc9c1f8, type: 3}
   - {fileID: 21300000, guid: 3b67a5893e0f6cd4c9257c86593f9137, type: 3}
   - {fileID: 21300000, guid: ee3b16b501a0b1e4b8a42d1914413af6, type: 3}
   - {fileID: 21300000, guid: 9454e69dbe5d5884980725641ec847d1, type: 3}
   - {fileID: 21300000, guid: d9d3736fef3a0f04fb41e53fdc97844a, type: 3}
+  duration: 5
 --- !u!1 &1248985004
 GameObject:
   m_ObjectHideFlags: 0

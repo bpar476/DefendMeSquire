@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class SquireTask : MonoBehaviour
 {
+    public float duration;
 
     private LoadingBar loadingBar;
 
-    private bool isBeingCompleted = false;
+    private bool done;
+
+    private bool isPlayerDoingTask = false;
     private bool playerIsOnTask = false;
+
+    private float time;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +22,47 @@ public class SquireTask : MonoBehaviour
         if (loadingBar == null) {
             throw new System.Exception("loading bar is not on child component");
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (done) {
+            return;
+        }
+
+        UpdateDoingTask();
+
+        if (isPlayerDoingTask) {
+            IncrementTime();
+
+            float completeness = time / duration;
+
+            // Set loading bar progress
+
+            if (completeness >= 1) {
+                done = true;
+                Debug.Log("task: " + gameObject.name + " has been completed!");
+            }
+        }
+    }
+
+    private void UpdateDoingTask() {
+        bool playerTryingToDotask = Input.GetAxis("Interaction") != 0;
+        if (playerTryingToDotask && playerIsOnTask) {
+            isPlayerDoingTask = true;
+            StartPerformingTask();
+        } else {
+            if (isPlayerDoingTask) {
+                StopPerformingTask();
+            }
+            isPlayerDoingTask = false;
+        }
+    }
+
+    private void IncrementTime()
+    {
+        time += Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -35,28 +81,12 @@ public class SquireTask : MonoBehaviour
             return gobj.tag == "Player";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        bool playerTryingToDotask = Input.GetAxis("Interaction") != 0;
-        if (playerTryingToDotask && playerIsOnTask) {
-            isBeingCompleted = true;
-            StartPerformingTask();
-        } else {
-            if (isBeingCompleted) {
-                StopPerformingTask();
-            }
-            isBeingCompleted = false;
-        }
-    }
 
     void StartPerformingTask() {
-        Debug.Log("Player is doing task");
         // Start loading bar
     }
 
     void StopPerformingTask() {
-        Debug.Log("Player stopped doing task");
         // Stop loading bar
     }
 

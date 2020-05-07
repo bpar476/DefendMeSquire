@@ -8,6 +8,8 @@ public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
     /// Ordered list of tasks to be completed to satisfy this task set
     public List<SquireTask> tasks;
 
+    public SquireTask taskPrefab;
+
     private int currentTaskIndex = 0;
 
     void Start() {
@@ -31,8 +33,6 @@ public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
 
     private void DeactivateCurrentTask() {
         SquireTask task = tasks[currentTaskIndex];
-        task.DeRegisterListener(this);
-        SetTaskActive(task, false);
     } 
 
     private void HandleAllTasksFinished() {
@@ -46,9 +46,6 @@ public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
     }
 
     private void SetTaskActive(SquireTask task, bool active) {
-        Debug.Log("Setting task actitivy to");
-        Debug.Log(active);
-        Debug.Log(task.gameObject.name);
         task.gameObject.SetActive(active);
     }
 }

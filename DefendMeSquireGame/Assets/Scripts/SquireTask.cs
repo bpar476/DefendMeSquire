@@ -29,6 +29,7 @@ public class SquireTask : MonoBehaviour
         {
             throw new System.Exception("Task not set up properly");
         }
+        loadingBar.gameObject.SetActive(false);
     }
 
     public void RegisterListener(SquireTaskCompletionListener listener) {
@@ -66,12 +67,22 @@ public class SquireTask : MonoBehaviour
         bool playerTryingToDotask = Input.GetAxis("Interaction") != 0;
         if (playerTryingToDotask && playerIsOnTask)
         {
-            isPlayerDoingTask = true;
+            StartTaskCompletion();
         }
-        else
+        else if (isPlayerDoingTask)
         {
-            isPlayerDoingTask = false;
+            StopTaskCompletion();
         }
+    }
+    
+    private void StartTaskCompletion() {
+        isPlayerDoingTask = true;
+        loadingBar.gameObject.SetActive(true);
+    }
+
+    private void StopTaskCompletion() {
+        isPlayerDoingTask = false;
+        loadingBar.gameObject.SetActive(false);
     }
 
     private void UpdateTaskProgress()
@@ -90,6 +101,8 @@ public class SquireTask : MonoBehaviour
             done = true;
 
             RenderCompletedTask();
+
+            StopTaskCompletion();
 
             listeners.ForEach(listener => listener.onTaskCompleted());
         }

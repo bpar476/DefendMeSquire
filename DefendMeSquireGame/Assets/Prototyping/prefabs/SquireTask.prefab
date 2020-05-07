@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2159464910350952224}
   - component: {fileID: 2159464910350952225}
   m_Layer: 0
-  m_Name: shield
+  m_Name: SquireTask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2159464911891336440
 Transform:
   m_ObjectHideFlags: 0

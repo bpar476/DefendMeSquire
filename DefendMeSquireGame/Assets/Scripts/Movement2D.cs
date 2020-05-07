@@ -6,8 +6,6 @@ public class Movement2D : MonoBehaviour
 {
     public float speed;
     public float maxMoveSpeed;
-
-    private bool stopped = true;
     private Rigidbody2D rb2d;
 
     void Start()
@@ -26,8 +24,6 @@ public class Movement2D : MonoBehaviour
         } else {
             if (Input.GetAxis("Horizontal") != 0)
             {
-                stopped = false;
-
                 float inputDir = Mathf.Sign(Input.GetAxis("Horizontal"));
 
                 if (inputDir * rb2d.velocity.x < maxMoveSpeed)

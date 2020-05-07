@@ -10,13 +10,51 @@ public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
 
     public SquireTask taskPrefab;
 
-    private int currentTaskIndex = 0;
+
+    private float timer = 0;
+    private float currentTaskInterval;
+
+    private int currentTaskIndex = -1;
+    private SquireTaskSpawnPoint[] spawnPoints;
+    private SquireTaskSpawnPoint nextTaskSpawn {
+        get {
+            Debug.Log(currentTaskIndex);
+            
+            if (currentTaskIndex < 0 || spawnPoints == null || currentTaskIndex > spawnPoints.Length) {
+                return null;
+            }
+            return spawnPoints[currentTaskIndex];
+        }
+    }
 
     void Start() {
-        foreach(SquireTask task in tasks) {
-            SetTaskActive(task, false);
+        spawnPoints =  GameObject.FindObjectsOfType<SquireTaskSpawnPoint>();
+
+        System.Array.Sort(spawnPoints, (x, y) => {
+            return x.spawnDelaySeconds - y.spawnDelaySeconds;
+        });
+
+        QueueNextTaskSpawn();
+    }
+
+    private void QueueNextTaskSpawn() {
+        currentTaskIndex++;
+        currentTaskInterval = nextTaskSpawn.spawnDelaySeconds;
+    }
+
+    private void Update() {
+        timer += Time.deltaTime;
+
+        if (timer > currentTaskInterval) {
+            timer -= currentTaskInterval;
+            ActivateCurrentTask();
         }
-        ActivateCurrentTask();
+    }
+
+    private void ActivateCurrentTask() {
+        SquireTask task = Instantiate(taskPrefab, nextTaskSpawn.transform.position, Quaternion.identity);
+
+        task.RegisterListener(this);
     }
 
     public void onTaskCompleted() {
@@ -39,11 +77,6 @@ public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
         Debug.Log("Completed all tasks!");
     }
 
-    private void ActivateCurrentTask() {
-        SquireTask task = tasks[currentTaskIndex];
-        task.RegisterListener(this);
-        SetTaskActive(task, true);
-    }
 
     private void SetTaskActive(SquireTask task, bool active) {
         task.gameObject.SetActive(active);

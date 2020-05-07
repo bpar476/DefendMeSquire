@@ -18,6 +18,8 @@ public class SquireTask : MonoBehaviour
 
     private float time;
 
+    private List<SquireTaskCompletionListener> listeners = new List<SquireTaskCompletionListener>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,14 @@ public class SquireTask : MonoBehaviour
         {
             throw new System.Exception("Task not set up properly");
         }
+    }
+
+    public void RegisterListener(SquireTaskCompletionListener listener) {
+        listeners.Add(listener);
+    }
+
+    public void DeRegisterListener(SquireTaskCompletionListener listener) {
+        listeners.Remove(listener);
     }
 
     // Update is called once per frame
@@ -80,6 +90,8 @@ public class SquireTask : MonoBehaviour
             done = true;
 
             RenderCompletedTask();
+
+            listeners.ForEach(listener => listener.onTaskCompleted());
         }
     }
 

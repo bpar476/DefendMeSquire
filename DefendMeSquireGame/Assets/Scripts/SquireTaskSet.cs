@@ -1,0 +1,54 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
+{
+
+    /// Ordered list of tasks to be completed to satisfy this task set
+    public List<SquireTask> tasks;
+
+    private int currentTaskIndex = 0;
+
+    void Start() {
+        foreach(SquireTask task in tasks) {
+            SetTaskActive(task, false);
+        }
+        ActivateCurrentTask();
+    }
+
+    public void onTaskCompleted() {
+        DeactivateCurrentTask();
+
+        currentTaskIndex++;
+
+        if (currentTaskIndex == tasks.Count) {
+            HandleAllTasksFinished();
+        } else {
+            ActivateCurrentTask();
+        }
+    }
+
+    private void DeactivateCurrentTask() {
+        SquireTask task = tasks[currentTaskIndex];
+        task.DeRegisterListener(this);
+        SetTaskActive(task, false);
+    } 
+
+    private void HandleAllTasksFinished() {
+        Debug.Log("Completed all tasks!");
+    }
+
+    private void ActivateCurrentTask() {
+        SquireTask task = tasks[currentTaskIndex];
+        task.RegisterListener(this);
+        SetTaskActive(task, true);
+    }
+
+    private void SetTaskActive(SquireTask task, bool active) {
+        Debug.Log("Setting task actitivy to");
+        Debug.Log(active);
+        Debug.Log(task.gameObject.name);
+        task.gameObject.SetActive(active);
+    }
+}

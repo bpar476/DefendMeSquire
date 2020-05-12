@@ -6,20 +6,23 @@ public class LadderTopper : MonoBehaviour
 {
     public Ladder ladder;
 
-    private Collider2D col;
+    private PlatformEffector2D effector2D;
 
     private void Start() {
-        col = GetComponent<Collider2D>();
+        effector2D = GetComponent<PlatformEffector2D>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-       if (ladder.isPlayerOnLadder()) {
-           col.enabled = false;
-       } else {
-           col.enabled = true;
-       }
+        GameObject player = GameObject.FindWithTag("Player");
+        Vector3 playerPosition = player.transform.position;
+        if (playerPosition.y > transform.position.y + 0.5f && Input.GetAxis("Vertical") < 0) {
+            // Player is above tip of ladder
+            effector2D.rotationalOffset = 180;
+        } else {
+            effector2D.rotationalOffset = 0;
+        }
     }
 }

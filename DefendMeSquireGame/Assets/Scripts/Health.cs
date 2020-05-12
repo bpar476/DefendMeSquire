@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     public int maxHitPoints;
     public Text hitpointsUI;
+    public RectTransform deathMenu;
 
     private int currentHitPoints;
 
@@ -41,6 +42,7 @@ public class Health : MonoBehaviour
     }
 
     private void Die() {
-        Debug.Log("you ded");
+        deathMenu.gameObject.SetActive(true);
+        GameObject.Destroy(this.gameObject);
     }
 }

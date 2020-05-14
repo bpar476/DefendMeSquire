@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3902576737337289469}
   - component: {fileID: 7232469942554368759}
   - component: {fileID: -3079554386619481163}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8177420046337575242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.16, y: -1.16, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 525955737
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2292719611878453243, guid: cd81243e6f0443f479f0332e3df4ab23,
     type: 3}

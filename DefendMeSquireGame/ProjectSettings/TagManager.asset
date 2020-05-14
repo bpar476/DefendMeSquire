@@ -15,8 +15,8 @@ TagManager:
   - 
   - Ladder
   - Player
-  - 
-  - 
+  - Arrow
+  - Ground
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Arrow
+    uniqueID: 525955737
     locked: 0
   - name: Player
     uniqueID: 2912730761

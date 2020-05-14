@@ -27,7 +27,7 @@ public class LadderTopper : MonoBehaviour
         }
 
         Vector3 playerPosition = player.transform.position;
-        if (playerPosition.y > transform.position.y + 0.5f && Input.GetAxis("Vertical") < 0)
+        if (playerPosition.y > transform.position.y + 0.5f && ladder.IsPlayerOnLadder() && Input.GetAxis("Vertical") < 0)
         {
 
             // Setting the rotation of the effector repeatedly messes with it's collision properties

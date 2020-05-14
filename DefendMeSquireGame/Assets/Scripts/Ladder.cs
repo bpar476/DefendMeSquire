@@ -11,7 +11,8 @@ public class Ladder : MonoBehaviour
 
     private float actualClimbSpeed;
 
-    private void Start() {
+    private void Start()
+    {
         actualClimbSpeed = climbSpeed / 60;
     }
 
@@ -19,18 +20,22 @@ public class Ladder : MonoBehaviour
     void FixedUpdate()
     {
         float verticalInput = Input.GetAxis("Vertical");
-        if (verticalInput != 0 && playerInLadder) {
+        if (verticalInput != 0 && playerInLadder)
+        {
             playerOnLadder = true;
             player.GetComponent<Rigidbody2D>().MovePosition(new Vector2(player.transform.position.x, player.transform.position.y) + (Mathf.Sign(verticalInput) * new Vector2(0, 1) * climbSpeed));
         }
     }
 
-    public bool isPlayerOnLadder() {
+    public bool IsPlayerOnLadder()
+    {
         return playerOnLadder;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag.Equals("Player")) {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
             playerInLadder = true;
 
             player = other.gameObject;
@@ -40,8 +45,10 @@ public class Ladder : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if (other.gameObject.tag.Equals("Player")) {
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
             playerInLadder = false;
             playerOnLadder = false;
 

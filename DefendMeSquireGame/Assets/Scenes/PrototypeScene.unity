@@ -153,6 +153,7 @@ MonoBehaviour:
   spawnDelaySeconds: 2
   taskPrefab: {fileID: 2159464910350952224, guid: 8d2d1fa9083315e47a6f459109958584,
     type: 3}
+  objectsActiveDuringThisTask: []
 --- !u!4 &21822052
 Transform:
   m_ObjectHideFlags: 0
@@ -233,6 +234,7 @@ MonoBehaviour:
   spawnDelaySeconds: 1
   taskPrefab: {fileID: 2159464910350952224, guid: 8d2d1fa9083315e47a6f459109958584,
     type: 3}
+  objectsActiveDuringThisTask: []
 --- !u!4 &152435818
 Transform:
   m_ObjectHideFlags: 0
@@ -3238,6 +3240,12 @@ MonoBehaviour:
   spawnDelaySeconds: 0
   taskPrefab: {fileID: 2159464910350952224, guid: 8d2d1fa9083315e47a6f459109958584,
     type: 3}
+  objectsActiveDuringThisTask:
+  - {fileID: 1146533144}
+  - {fileID: 115592364}
+  - {fileID: 1844348265}
+  - {fileID: 2079476732}
+  - {fileID: 390465465}
 --- !u!4 &1338867319
 Transform:
   m_ObjectHideFlags: 0

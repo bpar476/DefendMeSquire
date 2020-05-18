@@ -21,45 +21,55 @@ public class LadderClimbing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         float vertInput = Input.GetAxis("Vertical");
         bool climbUp = vertInput > 0;
         bool climbDown = vertInput < 0;
 
         bool canClimb = false;
         RaycastHit2D hitAbove = Physics2D.Raycast(transform.position, Vector2.up, reach, ladderMask);
-        if (hitAbove.collider != null) {
+        if (hitAbove.collider != null)
+        {
             // Can climb the ladder
             canClimb = true;
-        } else {
+        }
+        else
+        {
             RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, Vector2.down, reach, ladderMask);
             Debug.Log(hitBelow.collider?.gameObject.name);
-            if (hitBelow.collider != null) {
+            if (hitBelow.collider != null)
+            {
                 canClimb = true;
             }
         }
 
-        if (canClimb && climbUp) {
+        if (canClimb && climbUp)
+        {
             ClimbUp();
         }
 
-        if (canClimb && climbDown) {
+        if (canClimb && climbDown)
+        {
             ClimbDown();
         }
     }
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmos()
+    {
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - reach, transform.position.z));
     }
 
-    private void ClimbUp() {
+    private void ClimbUp()
+    {
         body.MovePosition(new Vector2(transform.position.x, transform.position.y) + (new Vector2(0, 1) * climbSpeed));
     }
 
-    private void ClimbDown() {
+    private void ClimbDown()
+    {
         body.MovePosition(new Vector2(transform.position.x, transform.position.y) + (Vector2.down * climbSpeed));
     }
 }

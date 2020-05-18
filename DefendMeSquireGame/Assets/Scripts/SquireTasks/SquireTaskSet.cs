@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
 {
-
-    /// Ordered list of tasks to be completed to satisfy this task set
-    public List<SquireTask> tasks;
-
     public SquireTask taskPrefab;
-
 
     private float timer = 0;
     private float currentTaskInterval;
 
     private int currentTaskIndex = -1;
     private SquireTaskSpawnPoint[] spawnPoints;
-    private SquireTaskSpawnPoint nextTaskSpawn {
-        get {            
-            if (currentTaskIndex < 0 || spawnPoints == null || currentTaskIndex > spawnPoints.Length) {
+    private SquireTaskSpawnPoint nextTaskSpawn
+    {
+        get
+        {
+            if (currentTaskIndex < 0 || spawnPoints == null || currentTaskIndex > spawnPoints.Length)
+            {
                 return null;
             }
             return spawnPoints[currentTaskIndex];
@@ -26,33 +24,40 @@ public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
     }
     private bool readyToSpawnTask = true;
 
-    void Start() {
+    void Start()
+    {
         spawnPoints = GameObject.FindObjectsOfType<SquireTaskSpawnPoint>();
 
-        System.Array.Sort(spawnPoints, (x, y) => {
+        System.Array.Sort(spawnPoints, (x, y) =>
+        {
             return x.spawnDelaySeconds - y.spawnDelaySeconds;
         });
 
         QueueNextTaskSpawn();
     }
 
-    private void QueueNextTaskSpawn() {
+    private void QueueNextTaskSpawn()
+    {
         currentTaskIndex++;
         currentTaskInterval = nextTaskSpawn.spawnDelaySeconds;
     }
 
-    private void Update() {
-        if (readyToSpawnTask) {
+    private void Update()
+    {
+        if (readyToSpawnTask)
+        {
             timer += Time.deltaTime;
 
-            if (timer > currentTaskInterval) {
+            if (timer > currentTaskInterval)
+            {
                 timer -= currentTaskInterval;
                 ActivateCurrentTask();
             }
         }
     }
 
-    private void ActivateCurrentTask() {
+    private void ActivateCurrentTask()
+    {
         SquireTask task = Instantiate(taskPrefab, nextTaskSpawn.transform.position, Quaternion.identity);
 
         task.RegisterListener(this);
@@ -60,16 +65,21 @@ public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
         readyToSpawnTask = false;
     }
 
-    public void onTaskCompleted() {
-        if (currentTaskIndex == spawnPoints.Length - 1) {
+    public void onTaskCompleted()
+    {
+        if (currentTaskIndex == spawnPoints.Length - 1)
+        {
             HandleAllTasksFinished();
-        } else {
+        }
+        else
+        {
             QueueNextTaskSpawn();
             readyToSpawnTask = true;
         }
     }
 
-    private void HandleAllTasksFinished() {
+    private void HandleAllTasksFinished()
+    {
         Debug.Log("Completed all tasks!");
     }
 }

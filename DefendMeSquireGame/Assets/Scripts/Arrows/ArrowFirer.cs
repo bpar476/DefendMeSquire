@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class ArrowFirer : MonoBehaviour
@@ -10,6 +9,7 @@ public class ArrowFirer : MonoBehaviour
     public Vector2 trajectory;
     public float fireVelocity;
     public GameObject projectilePrefab;
+    public Color gizmoColor;
     private Vector2 normalizedTrajectory;
     private float timer;
     private bool firedFirstShot = false;
@@ -26,10 +26,7 @@ public class ArrowFirer : MonoBehaviour
     {
         if (HasTimerTicked())
         {
-            // float rand = Random.Range(0.0f, 1.0f);
-            // if (rand <= shotsPerMinute / 60.0f) {
             fireProjectile();
-            // }
         }
     }
 
@@ -59,9 +56,9 @@ public class ArrowFirer : MonoBehaviour
         return false;
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.magenta;
+        Gizmos.color = gizmoColor;
         Vector3 direction = trajectory.normalized;
         Gizmos.DrawLine(transform.position, transform.position + direction);
     }

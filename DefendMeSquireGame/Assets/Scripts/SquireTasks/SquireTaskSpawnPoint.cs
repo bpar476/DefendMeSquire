@@ -10,9 +10,14 @@ public class SquireTaskSpawnPoint : MonoBehaviour, SquireTaskCompletionListener
 
     public List<GameObject> objectsActiveDuringThisTask;
 
+    private void Start()
+    {
+        SetActivityOfPairedTasks(false);
+    }
+
     public void onTaskCompleted()
     {
-        objectsActiveDuringThisTask.ForEach(gobj => gobj.SetActive(false));
+        SetActivityOfPairedTasks(false);
     }
 
     public SquireTask Spawn()
@@ -20,7 +25,12 @@ public class SquireTaskSpawnPoint : MonoBehaviour, SquireTaskCompletionListener
         SquireTask task = Instantiate(taskPrefab, transform.position, Quaternion.identity);
         task.RegisterListener(this);
 
-        objectsActiveDuringThisTask.ForEach(gobj => gobj.SetActive(true));
+        SetActivityOfPairedTasks(true);
         return task;
+    }
+
+    private void SetActivityOfPairedTasks(bool active)
+    {
+        objectsActiveDuringThisTask.ForEach(gobj => gobj.SetActive(active));
     }
 }

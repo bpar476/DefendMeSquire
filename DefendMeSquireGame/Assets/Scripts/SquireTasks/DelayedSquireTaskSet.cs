@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
 {
-    public SquireTask taskPrefab;
+    public RectTransform victoryUI;
     private float timer = 0;
     private float currentTaskInterval;
 
@@ -77,6 +77,6 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
 
     private void HandleAllTasksFinished()
     {
-        Debug.Log("Completed all tasks!");
+        victoryUI.gameObject.SetActive(true);
     }
 }

@@ -22,7 +22,7 @@ public class LadderTopper : MonoBehaviour
         if (player == null)
         {
             // Player is dead
-            gameObject.SetActive(false);
+            this.enabled = false;
             return;
         }
 

@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnLocation: {x: 0, y: 0}
   spawnDelaySeconds: 2
+  taskPrefab: {fileID: 2159464910350952224, guid: 8d2d1fa9083315e47a6f459109958584,
+    type: 3}
 --- !u!4 &21822052
 Transform:
   m_ObjectHideFlags: 0
@@ -229,6 +231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnLocation: {x: 0, y: 0}
   spawnDelaySeconds: 1
+  taskPrefab: {fileID: 2159464910350952224, guid: 8d2d1fa9083315e47a6f459109958584,
+    type: 3}
 --- !u!4 &152435818
 Transform:
   m_ObjectHideFlags: 0
@@ -3232,6 +3236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnLocation: {x: 0, y: 0}
   spawnDelaySeconds: 0
+  taskPrefab: {fileID: 2159464910350952224, guid: 8d2d1fa9083315e47a6f459109958584,
+    type: 3}
 --- !u!4 &1338867319
 Transform:
   m_ObjectHideFlags: 0

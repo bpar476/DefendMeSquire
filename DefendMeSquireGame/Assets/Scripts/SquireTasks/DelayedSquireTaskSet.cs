@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
+public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
 {
     public SquireTask taskPrefab;
-
     private float timer = 0;
     private float currentTaskInterval;
 
@@ -58,10 +57,8 @@ public class SquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
 
     private void ActivateCurrentTask()
     {
-        SquireTask task = Instantiate(taskPrefab, nextTaskSpawn.transform.position, Quaternion.identity);
-
+        SquireTask task = nextTaskSpawn.Spawn();
         task.RegisterListener(this);
-
         readyToSpawnTask = false;
     }
 

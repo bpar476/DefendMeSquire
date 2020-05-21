@@ -9015,7 +9015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1984822676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9743,11 +9743,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LadderAndPlatform
       objectReference: {fileID: 0}
-    - target: {fileID: 3144819334806907415, guid: da9c1388f2aea2742a03e11e6f9ff860,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3144819334806907418, guid: da9c1388f2aea2742a03e11e6f9ff860,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9802,11 +9797,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3144819333648331899, guid: da9c1388f2aea2742a03e11e6f9ff860,
-        type: 3}
-      propertyPath: climbSpeed
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da9c1388f2aea2742a03e11e6f9ff860, type: 3}

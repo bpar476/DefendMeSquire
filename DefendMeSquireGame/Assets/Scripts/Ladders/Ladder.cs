@@ -10,21 +10,24 @@ public class Ladder : MonoBehaviour
 
     private bool playerOnLadder;
 
-    private float actualClimbSpeed;
-
-    private void Start()
-    {
-        actualClimbSpeed = climbSpeed / 60;
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
         float verticalInput = Input.GetAxis("Vertical");
-        if (verticalInput != 0 && playerInLadder)
+        if (playerInLadder)
         {
-            playerOnLadder = true;
-            player.GetComponent<Rigidbody2D>().MovePosition(new Vector2(player.transform.position.x, player.transform.position.y) + (Mathf.Sign(verticalInput) * new Vector2(0, 1) * climbSpeed));
+            Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+            if (verticalInput != 0)
+            {
+                playerOnLadder = true;
+                playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Sign(verticalInput) * climbSpeed);
+                player.GetComponent<Movement2D>().enabled = false;
+            }
+            else
+            {
+                playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
+                player.GetComponent<Movement2D>().enabled = true;
+            }
         }
     }
 

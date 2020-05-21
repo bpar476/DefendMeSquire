@@ -7,8 +7,8 @@ public class Ladder : MonoBehaviour
 
     private GameObject player;
     private bool playerInLadder;
-
     private bool playerOnLadder;
+    private bool playerCanReachLadder;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -17,16 +17,22 @@ public class Ladder : MonoBehaviour
         if (playerInLadder)
         {
             Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+            Collider2D collider = GetComponent<Collider2D>();
             if (verticalInput != 0)
             {
-                playerOnLadder = true;
-                playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Sign(verticalInput) * climbSpeed);
-                player.GetComponent<Movement2D>().enabled = false;
+                if (verticalInput < 0 || playerCanReachLadder)
+                {
+                    playerOnLadder = true;
+                    playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Sign(verticalInput) * climbSpeed);
+                    UpdateCanReachLadder();
+                }
             }
             else
             {
-                playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
-                player.GetComponent<Movement2D>().enabled = true;
+                if (playerOnLadder)
+                {
+                    playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
+                }
             }
         }
     }
@@ -40,12 +46,22 @@ public class Ladder : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            playerInLadder = true;
-
             player = other.gameObject;
 
+            playerInLadder = true;
             Rigidbody2D rb2d = player.GetComponent<Rigidbody2D>();
             rb2d.gravityScale = 0;
+
+            UpdateCanReachLadder();
+        }
+    }
+
+    private void UpdateCanReachLadder()
+    {
+        Collider2D collider = GetComponent<Collider2D>();
+        if (player.transform.position.y < collider.bounds.max.y)
+        {
+            playerCanReachLadder = true;
         }
     }
 
@@ -55,6 +71,7 @@ public class Ladder : MonoBehaviour
         {
             playerInLadder = false;
             playerOnLadder = false;
+            playerCanReachLadder = false;
 
             player = other.gameObject;
 

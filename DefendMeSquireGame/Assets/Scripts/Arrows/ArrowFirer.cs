@@ -13,10 +13,12 @@ public class ArrowFirer : MonoBehaviour
     private Vector2 normalizedTrajectory;
     private float timer;
     private bool firedFirstShot = false;
+    private ArrowWarning warning;
 
     // Start is called before the first frame update
     void Start()
     {
+        warning = GetComponent<ArrowWarning>();
         timer = -timerOffset;
         normalizedTrajectory = trajectory.normalized;
     }
@@ -24,9 +26,11 @@ public class ArrowFirer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        warning.ActivateWarning();
         if (HasTimerTicked())
         {
             fireProjectile();
+            warning.DeactivateWarning();
         }
     }
 

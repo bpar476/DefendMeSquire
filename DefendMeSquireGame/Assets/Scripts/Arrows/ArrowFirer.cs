@@ -29,7 +29,6 @@ public class ArrowFirer : MonoBehaviour
     {
         if (!(firedFirstShot || hasWarned))
         {
-            Debug.Log("activating warning");
             warning.ActivateWarning();
             hasWarned = true;
         }
@@ -44,7 +43,6 @@ public class ArrowFirer : MonoBehaviour
     {
         if (!firedFirstShot)
         {
-            Debug.Log("deactivating warning");
             firedFirstShot = true;
             warning.DeactivateWarning();
         }

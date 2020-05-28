@@ -7,6 +7,14 @@ public class Killzone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(other.gameObject);
+        var killable = other.gameObject.GetComponent<Killable>();
+        if (killable != null)
+        {
+            killable.Kill();
+        }
+        else
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

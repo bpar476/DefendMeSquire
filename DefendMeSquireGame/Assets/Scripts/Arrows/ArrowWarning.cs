@@ -74,10 +74,6 @@ public class ArrowWarning : MonoBehaviour
         {
             Gizmos.DrawSphere(origin, 0.05f);
         }
-        else
-        {
-            Debug.Log("no intersection with camera edge");
-        }
     }
 
     public Vector2 GetIntersectionPointCoordinates(Vector2 A1, Vector2 A2, Vector2 B1, Vector2 B2, out bool found)

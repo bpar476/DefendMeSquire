@@ -5103,6 +5103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BotLeftLauncher3
       objectReference: {fileID: 0}
+    - target: {fileID: 5776278377654377476, guid: 770503ddbf98eef40800348367a1e6ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: trajectory.y
@@ -6785,6 +6790,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BotLeftLauncher2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776278377654377476, guid: 770503ddbf98eef40800348367a1e6ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}

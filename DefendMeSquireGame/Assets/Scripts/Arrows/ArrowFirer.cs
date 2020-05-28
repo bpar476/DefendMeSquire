@@ -14,6 +14,7 @@ public class ArrowFirer : MonoBehaviour
     private float timer;
     private bool firedFirstShot = false;
     private ArrowWarning warning;
+    private bool hasWarned;
 
     // Start is called before the first frame update
     void Start()
@@ -26,16 +27,28 @@ public class ArrowFirer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        warning.ActivateWarning();
+        if (!(firedFirstShot || hasWarned))
+        {
+            Debug.Log("activating warning");
+            warning.ActivateWarning();
+            hasWarned = true;
+        }
+
         if (HasTimerTicked())
         {
             fireProjectile();
-            warning.DeactivateWarning();
         }
     }
 
     private void fireProjectile()
     {
+        if (!firedFirstShot)
+        {
+            Debug.Log("deactivating warning");
+            firedFirstShot = true;
+            warning.DeactivateWarning();
+        }
+
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
 
         Rigidbody2D projectileBody = projectile.GetComponent<Rigidbody2D>();
@@ -47,7 +60,6 @@ public class ArrowFirer : MonoBehaviour
         timer += Time.fixedDeltaTime;
         if (!firedFirstShot && timer >= 0)
         {
-            firedFirstShot = true;
             return true;
         }
 

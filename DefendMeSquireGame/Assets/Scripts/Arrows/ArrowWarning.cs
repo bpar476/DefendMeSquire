@@ -8,6 +8,7 @@ public class ArrowWarning : MonoBehaviour
     private ArrowFirer firer;
     private Camera cam;
     private GameObject warning;
+    private bool warningActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,8 @@ public class ArrowWarning : MonoBehaviour
 
     public void ActivateWarning()
     {
+        warningActive = true;
+
         var (intersection, found) = GetWarningPosition();
         if (found)
         {
@@ -31,8 +34,11 @@ public class ArrowWarning : MonoBehaviour
 
     public void DeactivateWarning()
     {
-        warning.SetActive(false);
-        GameObject.Destroy(warning);
+        if (warningActive)
+        {
+            Object.Destroy(warning.gameObject);
+            warningActive = false;
+        }
     }
 
     private (Vector2 intersection, bool found) GetWarningPosition()
@@ -44,7 +50,7 @@ public class ArrowWarning : MonoBehaviour
 
         int side = transform.position.x < -width ? -1 : 1;
 
-        Vector2 direction = firer.trajectory.normalized * 3;
+        Vector2 direction = firer.trajectory.normalized * 10;
         Vector2 projection = new Vector2(transform.position.x, transform.position.y) + direction;
         Vector2 cameraEdgeBottom = new Vector2(side * width, -height);
         Vector2 cameraEdgeHeight = new Vector2(side * width, height);

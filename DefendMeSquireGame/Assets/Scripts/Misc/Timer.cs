@@ -44,6 +44,12 @@ public class Timer : MonoBehaviour
         return tick;
     }
 
+    public void ResetAndStopTimer()
+    {
+        running = false;
+        timer = -offset;
+    }
+
     private void UpdateTimer()
     {
         timer += Time.fixedDeltaTime;
@@ -57,7 +63,10 @@ public class Timer : MonoBehaviour
 
             tick = true;
         }
-        tick = false;
+        else
+        {
+            tick = false;
+        }
     }
 
 }

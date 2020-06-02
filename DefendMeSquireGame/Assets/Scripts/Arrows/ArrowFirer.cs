@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ArrowFirer : MonoBehaviour
 {
-
+    public Timer timer;
     public int period;
     public float timerOffset;
     public Vector2 trajectory;
@@ -11,7 +11,6 @@ public class ArrowFirer : MonoBehaviour
     public GameObject projectilePrefab;
     public Color gizmoColor;
     private Vector2 normalizedTrajectory;
-    private float timer;
     private bool firedFirstShot = false;
     private ArrowWarning warning;
     private bool hasWarned;
@@ -20,8 +19,17 @@ public class ArrowFirer : MonoBehaviour
     void Start()
     {
         warning = GetComponent<ArrowWarning>();
-        timer = -timerOffset;
         normalizedTrajectory = trajectory.normalized;
+    }
+
+    private void OnEnable()
+    {
+        timer.StartTimer();
+    }
+
+    private void OnDisable()
+    {
+        timer.ResetAndStopTimer();
     }
 
     // Update is called once per frame
@@ -55,19 +63,8 @@ public class ArrowFirer : MonoBehaviour
 
     bool HasTimerTicked()
     {
-        timer += Time.fixedDeltaTime;
-        if (!firedFirstShot && timer >= 0)
-        {
-            return true;
-        }
-
-        if (timer > period)
-        {
-            timer -= period;
-
-            return true;
-        }
-        return false;
+        bool tick = timer.Ticked();
+        return timer.Ticked();
     }
 
     private void OnDrawGizmosSelected()

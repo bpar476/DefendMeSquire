@@ -19,22 +19,24 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
     // Start is called before the first frame update
     void Start()
     {
-        warning = GetComponent<ArrowWarning>();
         normalizedTrajectory = trajectory.normalized;
     }
 
     private void OnEnable()
     {
+        GetWarning().ActivateWarning();
         stopwatchId = GetTimer().AddStopwatch(this);
     }
 
     private void OnDisable()
     {
+        GetWarning().DeactivateWarning();
         GetTimer().RemoveStopwatch(stopwatchId);
     }
 
     public void OnTick()
     {
+        GetWarning().DeactivateWarning();
         FireProjectile();
     }
 
@@ -75,5 +77,14 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
             timer = FindObjectOfType<GlobalTimer>();
         }
         return timer;
+    }
+
+    private ArrowWarning GetWarning()
+    {
+        if (warning == null)
+        {
+            warning = GetComponent<ArrowWarning>();
+        }
+        return warning;
     }
 }

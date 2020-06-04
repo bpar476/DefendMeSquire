@@ -5,6 +5,7 @@ using UnityEngine;
 public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
 {
     public RectTransform victoryUI;
+    // TODO: replace me with the global timer and a stopwatch implementation
     private float timer = 0;
     private float currentTaskInterval;
 

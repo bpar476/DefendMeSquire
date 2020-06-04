@@ -72,7 +72,7 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
 
     private GlobalTimer GetTimer()
     {
-        if (timer == null)
+        // if (timer == null)
         {
             timer = FindObjectOfType<GlobalTimer>();
         }

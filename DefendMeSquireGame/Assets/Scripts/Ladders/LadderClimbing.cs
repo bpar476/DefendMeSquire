@@ -40,7 +40,6 @@ public class LadderClimbing : MonoBehaviour
         else
         {
             RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, Vector2.down, reach, ladderMask);
-            Debug.Log(hitBelow.collider?.gameObject.name);
             if (hitBelow.collider != null)
             {
                 canClimb = true;

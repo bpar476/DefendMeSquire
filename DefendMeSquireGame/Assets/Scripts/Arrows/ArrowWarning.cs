@@ -17,8 +17,12 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
     private int timerStopwatchId;
     private GlobalTimer timer;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
+    {
+        Initialise();
+    }
+
+    private void Initialise()
     {
         firer = GetComponent<ArrowFirer>();
         cam = Camera.main;
@@ -26,6 +30,11 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
 
     public void ActivateWarning()
     {
+        // TODO: I should be initialised by a lifecycle method before I'm called
+        if (firer == null || cam == null)
+        {
+            Initialise();
+        }
         warningActive = true;
 
         var (intersection, found) = GetWarningPosition();
@@ -94,6 +103,7 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
 
     private (Vector2 intersection, bool found) GetWarningPosition()
     {
+        var cam = Camera.main;
         float width = cam.orthographicSize * cam.aspect;
         // Decrease width by a bit so sign is in view
         width -= 0.1f;
@@ -117,7 +127,7 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
     {
         if (firer == null)
         {
-            Start();
+            Initialise();
         }
 
         var (origin, found) = GetWarningPosition();

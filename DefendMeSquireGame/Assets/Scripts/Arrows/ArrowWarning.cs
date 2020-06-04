@@ -58,7 +58,12 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
         if (warningActive)
         {
             Object.Destroy(warning.gameObject);
-            warningActive = false;
+            // FIXME: I should go in initialisation code but it causes issues
+            {
+                warningActive = false;
+                warningVisible = false;
+                flickerCount = 0;
+            }
             timer.RemoveStopwatch(timerStopwatchId);
         }
     }

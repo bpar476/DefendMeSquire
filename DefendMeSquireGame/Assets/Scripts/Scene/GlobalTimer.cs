@@ -12,12 +12,14 @@ public class GlobalTimer : MonoBehaviour
         public float period;
         public float lastTick;
         public GlobalTimerStopwatch listener;
+        public bool active;
 
         public TimerData(float offset, float period, float currentTime, GlobalTimerStopwatch listener)
         {
             this.period = period;
             this.lastTick = currentTime + offset;
             this.listener = listener;
+            this.active = true;
         }
     }
 
@@ -40,7 +42,7 @@ public class GlobalTimer : MonoBehaviour
     /// <param name="id">ID of the stopwatch to remove</param>
     public void RemoveStopwatch(int id)
     {
-        listeners.Remove(id);
+        listeners[id].active = false;
     }
 
     // Update is called once per frame
@@ -61,6 +63,10 @@ public class GlobalTimer : MonoBehaviour
         foreach (KeyValuePair<int, TimerData> entry in listeners)
         {
             var data = entry.Value;
+            if (!data.active)
+            {
+                continue;
+            }
             float difference = timer - data.lastTick;
             if (difference >= data.period)
             {

@@ -1,9 +1,8 @@
 ﻿
 using UnityEngine;
 
-public class ArrowFirer : MonoBehaviour
+public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
 {
-    public Timer timer;
     public int period;
     public float timerOffset;
     public Vector2 trajectory;
@@ -14,6 +13,8 @@ public class ArrowFirer : MonoBehaviour
     private bool firedFirstShot = false;
     private ArrowWarning warning;
     private bool hasWarned;
+    private int stopwatchId;
+    private GlobalTimer timer;
 
     // Start is called before the first frame update
     void Start()
@@ -24,30 +25,29 @@ public class ArrowFirer : MonoBehaviour
 
     private void OnEnable()
     {
-        timer.StartTimer();
+        stopwatchId = GetTimer().AddStopwatch(this);
     }
 
     private void OnDisable()
     {
-        timer.ResetAndStopTimer();
+        GetTimer().RemoveStopwatch(stopwatchId);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void OnTick()
     {
-        if (!(firedFirstShot || hasWarned))
-        {
-            warning.ActivateWarning();
-            hasWarned = true;
-        }
-
-        if (HasTimerTicked())
-        {
-            fireProjectile();
-        }
+        FireProjectile();
     }
 
-    private void fireProjectile()
+    public float Period()
+    {
+        return period;
+    }
+
+    public float Offset()
+    {
+        return timerOffset;
+    }
+    private void FireProjectile()
     {
         if (!firedFirstShot)
         {
@@ -61,16 +61,19 @@ public class ArrowFirer : MonoBehaviour
         projectileBody.velocity = fireVelocity * normalizedTrajectory;
     }
 
-    bool HasTimerTicked()
-    {
-        bool tick = timer.Ticked();
-        return timer.Ticked();
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = gizmoColor;
         Vector3 direction = trajectory.normalized;
         Gizmos.DrawLine(transform.position, transform.position + direction);
+    }
+
+    private GlobalTimer GetTimer()
+    {
+        if (timer == null)
+        {
+            timer = FindObjectOfType<GlobalTimer>();
+        }
+        return timer;
     }
 }

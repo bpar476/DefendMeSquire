@@ -4,17 +4,16 @@ using UnityEngine;
 public class GlobalTimer : MonoBehaviour
 {
     private float timer = 0;
-    private bool running = false;
-    private List<TimerData> listeners = new List<TimerData>();
+    private Dictionary<int, TimerData> listeners = new Dictionary<int, TimerData>();
+    private int stopwatchIds = 0;
 
     class TimerData
     {
         public float period;
         public float lastTick;
-        public int id;
         public GlobalTimerStopwatch listener;
 
-        public TimerData(float offset, float period, float currentTime, int id, GlobalTimerStopwatch listener)
+        public TimerData(float offset, float period, float currentTime, GlobalTimerStopwatch listener)
         {
             this.period = period;
             this.lastTick = currentTime + offset;
@@ -22,9 +21,26 @@ public class GlobalTimer : MonoBehaviour
         }
     }
 
-    public void AddStopwatch(GlobalTimerStopwatch listener)
+    /// <summary>
+    /// Adds a new listener to the timer. It will be notified every GlobalTimerStopwatch.Period after GlobalTimerStopwatch.Offset has occured
+    /// </summary>
+    /// <param name="listener">The listener to register with the stopwatch</param>
+    /// <returns>An integer ID which can be used to remove the listener from the stopwatch in the future</returns>
+    public int AddStopwatch(GlobalTimerStopwatch listener)
     {
-        listeners.Add(new TimerData(listener.Offset(), listener.Period(), timer, listeners.Count, listener));
+        int id = stopwatchIds;
+        listeners.Add(id, new TimerData(listener.Offset(), listener.Period(), timer, listener));
+        stopwatchIds++;
+        return id;
+    }
+
+    /// <summary>
+    /// Removes the stopwatch with the given id from the global timer
+    /// </summary>
+    /// <param name="id">ID of the stopwatch to remove</param>
+    public void RemoveStopwatch(int id)
+    {
+        listeners.Remove(id);
     }
 
     // Update is called once per frame
@@ -42,8 +58,9 @@ public class GlobalTimer : MonoBehaviour
 
     private void CallListeners()
     {
-        listeners.ForEach((data) =>
+        foreach (KeyValuePair<int, TimerData> entry in listeners)
         {
+            var data = entry.Value;
             float difference = timer - data.lastTick;
             if (difference >= data.period)
             {
@@ -51,7 +68,8 @@ public class GlobalTimer : MonoBehaviour
                 data.listener.OnTick();
 
                 data.lastTick = timer - (difference - data.period);
+
             }
-        });
+        }
     }
 }

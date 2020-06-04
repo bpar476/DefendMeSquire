@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowWarning : MonoBehaviour
+public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
 {
+    private static int numFlickers = 3;
     public GameObject warningTemplate;
     private ArrowFirer firer;
     private Camera cam;
     private GameObject warning;
     private bool warningActive = false;
+
+    private bool warningVisible = false;
+    private int flickerCount = 0;
+
+    private int timerStopwatchId;
+    private GlobalTimer timer;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +37,11 @@ public class ArrowWarning : MonoBehaviour
         {
             warning = Instantiate(warningTemplate, transform.position, Quaternion.identity);
         }
+
+        warningVisible = true;
+
+        timer = GameObject.FindObjectOfType<GlobalTimer>();
+        timerStopwatchId = timer.AddStopwatch(this);
     }
 
     public void DeactivateWarning()
@@ -38,7 +50,46 @@ public class ArrowWarning : MonoBehaviour
         {
             Object.Destroy(warning.gameObject);
             warningActive = false;
+            timer.RemoveStopwatch(timerStopwatchId);
         }
+    }
+
+    public void OnTick()
+    {
+        if (warningActive)
+        {
+            ToggleWarningRendered();
+
+            UpdateFlicker();
+        }
+    }
+
+    private void ToggleWarningRendered()
+    {
+        warningVisible = !warningVisible;
+        warning.GetComponent<SpriteRenderer>().enabled = warningVisible;
+    }
+
+    private void UpdateFlicker()
+    {
+        if (warningVisible)
+        {
+            flickerCount++;
+            if (flickerCount == numFlickers)
+            {
+                DeactivateWarning();
+            }
+        }
+    }
+
+    public float Period()
+    {
+        return 0.5f;
+    }
+
+    public float Offset()
+    {
+        return 0;
     }
 
     private (Vector2 intersection, bool found) GetWarningPosition()
@@ -61,7 +112,8 @@ public class ArrowWarning : MonoBehaviour
         return (intersection, found);
     }
 
-    private void OnDrawGizmos()
+
+    private void OnDrawGizmosSelected()
     {
         if (firer == null)
         {
@@ -95,11 +147,5 @@ public class ArrowWarning : MonoBehaviour
             B1.x + (B2.x - B1.x) * mu,
             B1.y + (B2.y - B1.y) * mu
         );
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

@@ -5,6 +5,8 @@ public class GlobalTimer : MonoBehaviour
 {
     private float timer = 0;
     private Dictionary<int, TimerData> listeners = new Dictionary<int, TimerData>();
+    private Stack<TimerData> stagedListenersAdditions = new Stack<TimerData>();
+    private Stack<int> stagedListenerRemovals = new Stack<int>();
     private int stopwatchIds = 0;
 
     class TimerData
@@ -13,13 +15,15 @@ public class GlobalTimer : MonoBehaviour
         public float lastTick;
         public GlobalTimerStopwatch listener;
         public bool active;
+        public int id;
 
-        public TimerData(float offset, float period, float currentTime, GlobalTimerStopwatch listener)
+        public TimerData(float offset, float period, float currentTime, GlobalTimerStopwatch listener, int id)
         {
             this.period = period;
             this.lastTick = currentTime + offset;
             this.listener = listener;
             this.active = true;
+            this.id = id;
         }
     }
 
@@ -31,9 +35,14 @@ public class GlobalTimer : MonoBehaviour
     public int AddStopwatch(GlobalTimerStopwatch listener)
     {
         int id = stopwatchIds;
-        listeners.Add(id, new TimerData(listener.Offset(), listener.Period(), timer, listener));
         stopwatchIds++;
+        StageStopwatchAddition(new TimerData(listener.Offset(), listener.Period(), timer, listener, id));
         return id;
+    }
+
+    private void StageStopwatchAddition(TimerData stopwatch)
+    {
+        stagedListenersAdditions.Push(stopwatch);
     }
 
     /// <summary>
@@ -42,15 +51,37 @@ public class GlobalTimer : MonoBehaviour
     /// <param name="id">ID of the stopwatch to remove</param>
     public void RemoveStopwatch(int id)
     {
-        listeners[id].active = false;
+        stagedListenerRemovals.Push(id);
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
+        AddlistenersStagedForAddition();
+
+        RemoveListenersStagedForRemoval();
+
         UpdateTimer();
 
         CallListeners();
+    }
+
+    private void AddlistenersStagedForAddition()
+    {
+        while (stagedListenersAdditions.Count > 0)
+        {
+            var listener = stagedListenersAdditions.Pop();
+            Debug.Log("properly adding listener with id " + listener.id);
+            listeners.Add(listener.id, listener);
+        }
+    }
+
+    private void RemoveListenersStagedForRemoval()
+    {
+        while (stagedListenerRemovals.Count > 0)
+        {
+            listeners.Remove(stagedListenerRemovals.Pop());
+        }
     }
 
     private void UpdateTimer()
@@ -70,11 +101,11 @@ public class GlobalTimer : MonoBehaviour
             float difference = timer - data.lastTick;
             if (difference >= data.period)
             {
+                Debug.Log("ticking listener " + data.id);
                 //Tick
                 data.listener.OnTick();
 
                 data.lastTick = timer - (difference - data.period);
-
             }
         }
     }

@@ -126,7 +126,7 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
         bool found;
         Vector2 intersection = GetIntersectionPointCoordinates(transform.position, projection, closestCameraEdgeBottom, closestCameraEdgeTop, out found);
 
-        if (found)
+        if (found && isWithinRect(intersection, camRect))
         {
             return (intersection, found);
         }
@@ -137,7 +137,7 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
         Vector2 cameraTopRight = new Vector2(camRect.xMax, camRect.yMax - cameraTopOffset);
         intersection = GetIntersectionPointCoordinates(transform.position, projection, cameraTopLeft, cameraTopRight, out found);
 
-        return (intersection, found);
+        return (intersection, found && isWithinRect(intersection, camRect));
     }
 
     private Rect getCameraRect(Camera cam)
@@ -149,6 +149,11 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
         float cameraFloorY = cam.transform.position.y - height;
 
         return new Rect(cameraLeftEdgeX, cameraFloorY, 2 * width, 2 * height);
+    }
+
+    private bool isWithinRect(Vector2 point, Rect rect)
+    {
+        return point.x > rect.xMin && point.x < rect.xMax && point.y > rect.yMin && point.y < rect.yMax;
     }
 
     private void OnDrawGizmosSelected()

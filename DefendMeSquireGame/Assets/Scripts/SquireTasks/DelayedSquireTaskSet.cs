@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
+public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener, GlobalTimerStopwatch
 {
     public RectTransform victoryUI;
-    // TODO: replace me with the global timer and a stopwatch implementation
-    private float timer = 0;
+    private GlobalTimer timer;
+    private int timerId;
     private float currentTaskInterval;
 
     private int currentTaskIndex = -1;
@@ -22,7 +22,6 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
             return spawnPoints[currentTaskIndex];
         }
     }
-    private bool readyToSpawnTask = true;
 
     void Start()
     {
@@ -40,27 +39,14 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
     {
         currentTaskIndex++;
         currentTaskInterval = nextTaskSpawn.spawnDelaySeconds;
-    }
-
-    private void Update()
-    {
-        if (readyToSpawnTask)
-        {
-            timer += Time.deltaTime;
-
-            if (timer > currentTaskInterval)
-            {
-                timer -= currentTaskInterval;
-                ActivateCurrentTask();
-            }
-        }
+        timerId = GetTimer().AddStopwatch(this);
     }
 
     private void ActivateCurrentTask()
     {
         SquireTask task = nextTaskSpawn.Spawn();
         task.RegisterListener(this);
-        readyToSpawnTask = false;
+        GetTimer().RemoveStopwatch(timerId);
     }
 
     public void onTaskCompleted()
@@ -72,12 +58,35 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener
         else
         {
             QueueNextTaskSpawn();
-            readyToSpawnTask = true;
         }
     }
 
     private void HandleAllTasksFinished()
     {
         victoryUI.gameObject.SetActive(true);
+    }
+
+    public void OnTick()
+    {
+        ActivateCurrentTask();
+    }
+
+    public float Period()
+    {
+        return currentTaskInterval;
+    }
+
+    public float Offset()
+    {
+        return 0;
+    }
+
+    private GlobalTimer GetTimer()
+    {
+        // if (timer == null)
+        {
+            timer = FindObjectOfType<GlobalTimer>();
+        }
+        return timer;
     }
 }

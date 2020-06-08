@@ -112,21 +112,38 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
         float width = cam.orthographicSize * cam.aspect;
         // Decrease width by a bit so sign is in view
         width -= 0.1f;
-        float height = cam.orthographicSize / cam.aspect;
+        float height = cam.orthographicSize;
 
-        int side = transform.position.x < -width ? -1 : 1;
+        int side = transform.position.x < (cam.transform.position.x) - width ? -1 : 1;
 
         Vector2 direction = firer.trajectory.normalized * 10;
         Vector2 projection = new Vector2(transform.position.x, transform.position.y) + direction;
-        Vector2 cameraEdgeBottom = new Vector2(side * width, -height);
-        Vector2 cameraEdgeHeight = new Vector2(side * width, height);
+
+        float closestCameraEdgeX = cam.transform.position.x + side * width;
+        float cameraFloorY = cam.transform.position.y - height;
+        float cameraCeilingY = cameraFloorY + 2 * height;
+        Vector2 cameraEdgeBottom = new Vector2(closestCameraEdgeX, cameraFloorY);
+        Vector2 cameraEdgeHeight = new Vector2(closestCameraEdgeX, cameraCeilingY);
 
         bool found;
         Vector2 intersection = GetIntersectionPointCoordinates(transform.position, projection, cameraEdgeBottom, cameraEdgeHeight, out found);
 
+        if (found)
+        {
+            return (intersection, found);
+        }
+
+        // Maybe there is an intersection with the top of the viewport
+        float cameraLeftEdgeX = cam.transform.position.x - width;
+        float cameraRightEdgeX = cam.transform.position.x + width;
+        // Decrease height by a bit so sign is in view
+        cameraCeilingY -= 0.2f;
+        Vector2 cameraTopLeft = new Vector2(cameraLeftEdgeX, cameraCeilingY);
+        Vector2 cameraTopRight = new Vector2(cameraRightEdgeX, cameraCeilingY);
+        intersection = GetIntersectionPointCoordinates(transform.position, projection, cameraTopLeft, cameraTopRight, out found);
+
         return (intersection, found);
     }
-
 
     private void OnDrawGizmosSelected()
     {
@@ -143,6 +160,7 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
         }
     }
 
+    // Snippet and theory from: https://blog.dakwamine.fr/?p=1943
     public Vector2 GetIntersectionPointCoordinates(Vector2 A1, Vector2 A2, Vector2 B1, Vector2 B2, out bool found)
     {
         float tmp = (B2.x - B1.x) * (A2.y - A1.y) - (B2.y - B1.y) * (A2.x - A1.x);

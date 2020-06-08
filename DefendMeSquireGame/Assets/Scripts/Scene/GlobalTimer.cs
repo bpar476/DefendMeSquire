@@ -71,7 +71,6 @@ public class GlobalTimer : MonoBehaviour
         while (stagedListenersAdditions.Count > 0)
         {
             var listener = stagedListenersAdditions.Pop();
-            Debug.Log("properly adding listener with id " + listener.id);
             listeners.Add(listener.id, listener);
         }
     }
@@ -101,7 +100,6 @@ public class GlobalTimer : MonoBehaviour
             float difference = timer - data.lastTick;
             if (difference >= data.period)
             {
-                Debug.Log("ticking listener " + data.id);
                 //Tick
                 data.listener.OnTick();
 

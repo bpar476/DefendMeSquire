@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class BoundedMovingCamera : MonoBehaviour
 {
 
@@ -34,7 +35,7 @@ public class BoundedMovingCamera : MonoBehaviour
         }
         else
         {
-            transform.position = new Vector3(transform.position.x, player.transform.position.y + 1.8f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, Mathf.Clamp(player.transform.position.y + 1.8f, lowerBound, upperBound), transform.position.z);
         }
     }
 }

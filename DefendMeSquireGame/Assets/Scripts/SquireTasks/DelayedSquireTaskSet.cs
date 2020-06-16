@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener, GlobalTimerStopwatch
 {
-    public RectTransform victoryUI;
+    public NextFloorProgressionAction progressionAction;
     private GlobalTimer timer;
     private int timerId;
     private float currentTaskInterval;
@@ -63,7 +63,7 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener,
 
     private void HandleAllTasksFinished()
     {
-        victoryUI.gameObject.SetActive(true);
+        progressionAction.onProgressToNextFloor();
     }
 
     public void OnTick()

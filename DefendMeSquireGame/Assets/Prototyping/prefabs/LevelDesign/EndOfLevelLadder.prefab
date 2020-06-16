@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &334153416417542571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740575784271357662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba40b4dcca0f254a93900e62839aa49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ladder: {fileID: 3740575783148435635}
+  ladderCover: {fileID: 4469471872080074547}
 --- !u!1 &4469471872080074547
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +38,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4469471872080074547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.65, y: -0.5, z: 0}
+  m_LocalPosition: {x: -0.65, y: -0.399, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7301666193398704412}
@@ -122,12 +136,12 @@ PrefabInstance:
     - target: {fileID: 3144819333648331901, guid: da9c1388f2aea2742a03e11e6f9ff860,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.015
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3144819334806907415, guid: da9c1388f2aea2742a03e11e6f9ff860,
         type: 3}
       propertyPath: m_Name
-      value: L1UpperLadder Variant
+      value: EndOfLevelLadder
       objectReference: {fileID: 0}
     - target: {fileID: 3144819334806907415, guid: da9c1388f2aea2742a03e11e6f9ff860,
         type: 3}
@@ -191,9 +205,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da9c1388f2aea2742a03e11e6f9ff860, type: 3}
+--- !u!1 &3740575784271357662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3144819334806907415, guid: da9c1388f2aea2742a03e11e6f9ff860,
+    type: 3}
+  m_PrefabInstance: {fileID: 1751220063645338825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3740575784271357651 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3144819334806907418, guid: da9c1388f2aea2742a03e11e6f9ff860,
+    type: 3}
+  m_PrefabInstance: {fileID: 1751220063645338825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3740575783148435635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3144819333648331898, guid: da9c1388f2aea2742a03e11e6f9ff860,
     type: 3}
   m_PrefabInstance: {fileID: 1751220063645338825}
   m_PrefabAsset: {fileID: 0}

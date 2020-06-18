@@ -8,23 +8,34 @@ public class EndOfLevelLadder : NextFloorProgressionAction
     public GameObject ladder;
     public GameObject ladderCover;
 
+    private float ladderDropHeight = 3.0f;
+    private float coverRotation = 100.0f;
+    private float coverRotateDuration = 0.4f;
+    private float ladderDropDuration = 2f;
+
     public override void onProgressToNextFloor()
     {
-        RevealLadder();
+        StartCoroutine(RevealLadder());
     }
-    public void RevealLadder()
+    public IEnumerator RevealLadder()
     {
-        OpenLadderCover();
+        float initialZRotation = ladderCover.transform.eulerAngles.z;
+        float rotRate = coverRotation / coverRotateDuration;
+        float interval = 0.01f;
+        float delta = rotRate * interval;
+        for (float rot = 0f; rot <= coverRotation; rot += delta)
+        {
+            ladderCover.transform.eulerAngles = new Vector3(ladderCover.transform.eulerAngles.x, ladderCover.transform.eulerAngles.y, initialZRotation - rot);
+            yield return new WaitForSeconds(interval);
+        }
 
-        ExtendLadder();
-    }
-    private void ExtendLadder()
-    {
-        ladder.transform.position -= new Vector3(0, 3, 0);
-    }
-
-    private void OpenLadderCover()
-    {
-        ladderCover.transform.Rotate(0, 0, -90);
+        float initialYPos = ladder.transform.position.y;
+        float dropRate = ladderDropHeight / ladderDropDuration;
+        float ladderDelta = dropRate * interval;
+        for (float len = 0f; len <= ladderDropHeight; len += ladderDelta)
+        {
+            ladder.transform.position = new Vector3(transform.position.x, initialYPos - len, transform.position.z);
+            yield return new WaitForSeconds(interval);
+        }
     }
 }

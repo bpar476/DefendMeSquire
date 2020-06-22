@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour, Killable
 {
     public int maxHitPoints;
-    public Text hitpointsUI;
+    public HitPointsUI hitpointsUI;
     public RectTransform deathMenu;
 
     private int currentHitPoints;
@@ -14,6 +14,7 @@ public class Health : MonoBehaviour, Killable
     private void Start()
     {
         currentHitPoints = maxHitPoints;
+        hitpointsUI.MaxHitPoints = maxHitPoints;
         UpdateHitpointsUI();
     }
 
@@ -35,20 +36,7 @@ public class Health : MonoBehaviour, Killable
 
     private void UpdateHitpointsUI()
     {
-        hitpointsUI.text = currentHitPoints.ToString();
-
-        if (currentHitPoints == maxHitPoints)
-        {
-            hitpointsUI.color = Color.green;
-        }
-        else if (currentHitPoints == 0)
-        {
-            hitpointsUI.color = Color.red;
-        }
-        else
-        {
-            hitpointsUI.color = Color.yellow;
-        }
+        hitpointsUI.HitPoints = currentHitPoints;
     }
     private void Die()
     {

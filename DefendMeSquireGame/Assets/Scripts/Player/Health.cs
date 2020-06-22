@@ -58,6 +58,19 @@ public class Health : MonoBehaviour, Killable
     public void Kill()
     {
         deathMenu.gameObject.SetActive(true);
+        StartCoroutine(KillPlayerAfterAllArrowSoundsStopped());
+    }
+
+    private IEnumerator KillPlayerAfterAllArrowSoundsStopped()
+    {
+        var arrows = GetComponentsInChildren<Arrow>();
+        foreach (var arrow in arrows)
+        {
+            while (arrow.GetComponent<AudioSource>().isPlaying)
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
         GameObject.Destroy(this.gameObject);
     }
 }

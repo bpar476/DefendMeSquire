@@ -10,12 +10,21 @@ public class Health : MonoBehaviour, Killable
     public RectTransform deathMenu;
 
     private int currentHitPoints;
+    private bool hasInit = false;
 
     private void Start()
     {
         currentHitPoints = maxHitPoints;
-        hitpointsUI.MaxHitPoints = maxHitPoints;
-        UpdateHitpointsUI();
+    }
+
+    private void Update()
+    {
+        if (!hasInit)
+        {
+            hitpointsUI.MaxHitPoints = maxHitPoints;
+            UpdateHitpointsUI();
+            hasInit = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

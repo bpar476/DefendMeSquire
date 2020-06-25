@@ -30,8 +30,16 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
 
     private void OnDisable()
     {
-        GetWarning().DeactivateWarning();
-        GetTimer().RemoveStopwatch(stopwatchId);
+        var warning = GetWarning();
+        var timer = GetTimer();
+        if (warning != null)
+        {
+            warning.DeactivateWarning();
+        }
+        if (timer != null)
+        {
+            timer.RemoveStopwatch(stopwatchId);
+        }
     }
 
     public void OnTick()

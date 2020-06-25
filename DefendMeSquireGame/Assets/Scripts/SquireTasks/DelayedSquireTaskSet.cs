@@ -39,6 +39,7 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener,
     {
         currentTaskIndex++;
         currentTaskInterval = nextTaskSpawn.spawnDelaySeconds;
+        // TODO shouldn't be calling this in Start method
         timerId = GetTimer().AddStopwatch(this);
     }
 

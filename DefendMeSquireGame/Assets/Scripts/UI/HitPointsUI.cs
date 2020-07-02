@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteInEditMode]
 public class HitPointsUI : MonoBehaviour
 {
     public HitPointsSymbol hitPointsSymbol;
@@ -56,11 +55,5 @@ public class HitPointsUI : MonoBehaviour
     void Start()
     {
         renderedHearts = new List<HitPointsSymbol>(MaxHitPoints * 2);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

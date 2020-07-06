@@ -13,7 +13,7 @@ public class EndOfLevelLadder : NextFloorProgressionAction
     private float coverRotateDuration = 0.4f;
     private float ladderDropDuration = 2f;
 
-    public override void onProgressToNextFloor()
+    public override void OnProgressToNextFloor()
     {
         StartCoroutine(RevealLadder());
     }

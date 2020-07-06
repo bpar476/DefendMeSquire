@@ -18,12 +18,6 @@ public class LadderClimbing : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         float vertInput = Input.GetAxis("Vertical");

@@ -10,8 +10,8 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener,
     private GlobalTimer timer;
     private int timerId;
     private float currentTaskInterval;
-
     private int currentTaskIndex = -1;
+
     private SquireTaskSpawnPoint nextTaskSpawn
     {
         get
@@ -23,9 +23,12 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener,
             return squireTasks[currentTaskIndex];
         }
     }
+    private bool taskIsQueued = false;
 
     void Start()
     {
+        timer = FindObjectOfType<GlobalTimer>();
+
         System.Array.Sort(squireTasks, (x, y) =>
         {
             return x.spawnDelaySeconds - y.spawnDelaySeconds;
@@ -38,15 +41,23 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener,
     {
         currentTaskIndex++;
         currentTaskInterval = nextTaskSpawn.spawnDelaySeconds;
-        // TODO shouldn't be calling this in Start method
-        timerId = GetTimer().AddStopwatch(this);
+        taskIsQueued = true;
+    }
+
+    private void Update()
+    {
+        if (taskIsQueued)
+        {
+            timerId = timer.AddStopwatch(this);
+            taskIsQueued = false;
+        }
     }
 
     private void ActivateCurrentTask()
     {
         SquireTask task = nextTaskSpawn.Spawn();
         task.RegisterListener(this);
-        GetTimer().RemoveStopwatch(timerId);
+        timer.RemoveStopwatch(timerId);
     }
 
     public void onTaskCompleted()
@@ -79,14 +90,5 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener,
     public float Offset()
     {
         return 0;
-    }
-
-    private GlobalTimer GetTimer()
-    {
-        // if (timer == null)
-        {
-            timer = FindObjectOfType<GlobalTimer>();
-        }
-        return timer;
     }
 }

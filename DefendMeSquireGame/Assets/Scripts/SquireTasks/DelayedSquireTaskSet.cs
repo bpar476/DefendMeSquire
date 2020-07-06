@@ -5,29 +5,28 @@ using UnityEngine;
 public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener, GlobalTimerStopwatch
 {
     public NextFloorProgressionAction progressionAction;
+    public SquireTaskSpawnPoint[] squireTasks;
+
     private GlobalTimer timer;
     private int timerId;
     private float currentTaskInterval;
 
     private int currentTaskIndex = -1;
-    private SquireTaskSpawnPoint[] spawnPoints;
     private SquireTaskSpawnPoint nextTaskSpawn
     {
         get
         {
-            if (currentTaskIndex < 0 || spawnPoints == null || currentTaskIndex > spawnPoints.Length)
+            if (currentTaskIndex < 0 || squireTasks == null || currentTaskIndex > squireTasks.Length)
             {
                 return null;
             }
-            return spawnPoints[currentTaskIndex];
+            return squireTasks[currentTaskIndex];
         }
     }
 
     void Start()
     {
-        spawnPoints = GameObject.FindObjectsOfType<SquireTaskSpawnPoint>();
-
-        System.Array.Sort(spawnPoints, (x, y) =>
+        System.Array.Sort(squireTasks, (x, y) =>
         {
             return x.spawnDelaySeconds - y.spawnDelaySeconds;
         });
@@ -52,7 +51,7 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener,
 
     public void onTaskCompleted()
     {
-        if (currentTaskIndex == spawnPoints.Length - 1)
+        if (currentTaskIndex == squireTasks.Length - 1)
         {
             HandleAllTasksFinished();
         }

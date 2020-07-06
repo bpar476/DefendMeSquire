@@ -63,7 +63,7 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener,
 
     private void HandleAllTasksFinished()
     {
-        progressionAction.onProgressToNextFloor();
+        progressionAction.OnProgressToNextFloor();
     }
 
     public void OnTick()

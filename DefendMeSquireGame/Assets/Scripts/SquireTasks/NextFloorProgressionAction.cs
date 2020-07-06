@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class NextFloorProgressionAction : MonoBehaviour
 {
-    public abstract void onProgressToNextFloor();
+    public abstract void OnProgressToNextFloor();
 }

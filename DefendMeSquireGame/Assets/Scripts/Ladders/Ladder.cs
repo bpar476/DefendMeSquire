@@ -4,11 +4,21 @@ using UnityEngine;
 public class Ladder : MonoBehaviour
 {
     public float climbSpeed;
-
     private GameObject player;
     private bool playerInLadder;
     private bool playerOnLadder;
     private bool playerCanReachLadder;
+
+    private LadderClimbing climbing;
+
+    private void Start()
+    {
+        climbing = GetComponent<LadderClimbing>();
+        if (climbing == null)
+        {
+            throw new System.Exception("must have ladder climbing component on ladder");
+        }
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -23,7 +33,7 @@ public class Ladder : MonoBehaviour
                 if (verticalInput < 0 || playerCanReachLadder)
                 {
                     playerOnLadder = true;
-                    playerRb.velocity = new Vector2(playerRb.velocity.x, Mathf.Sign(verticalInput) * climbSpeed);
+                    climbing.ClimbLadder(playerRb, Mathf.Sign(verticalInput) * climbSpeed);
                     UpdateCanReachLadder();
                 }
             }

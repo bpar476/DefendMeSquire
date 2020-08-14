@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: f594406abd3ec4245891929f6afd2765
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3221066966159195066
+    second: GrayCastleTileSetExport_0
+  - first:
+      213: -7861873087801492716
+    second: GrayCastleTileSetExport_1
+  - first:
+      213: 4928885833144941318
+    second: GrayCastleTileSetExport_2
+  - first:
+      213: -3504867119579342970
+    second: GrayCastleTileSetExport_2
+  - first:
+      213: 869621827996102192
+    second: GrayCastleTileSetExport_4
+  - first:
+      213: -3826741237976371601
+    second: GrayCastleTileSetExport_5
+  - first:
+      213: -3026653718038611733
+    second: GrayCastleTileSetExport_6
+  - first:
+      213: -2317136593742137767
+    second: GrayCastleTileSetExport_7
+  - first:
+      213: -3611311080169202486
+    second: GrayCastleTileSetExport_8
+  - first:
+      213: 3006056772293680351
+    second: GrayCastleTileSetExport_9
+  - first:
+      213: -1672148577459787037
+    second: GrayCastleTileSetExport_10
+  - first:
+      213: 4617756428102515885
+    second: GrayCastleTileSetExport_11
+  - first:
+      213: 3097497033627312875
+    second: GrayCastleTileSetExport_12
+  - first:
+      213: 187967388588409697
+    second: GrayCastleTileSetExport_13
+  - first:
+      213: -1064896640490546562
+    second: GrayCastleTileSetExport_14
+  - first:
+      213: 1770839061506811638
+    second: GrayCastleTileSetExport_15
+  - first:
+      213: 355683026850952382
+    second: GrayCastleTileSetExport_16
+  - first:
+      213: 690869528228109672
+    second: GrayCastleTileSetExport_17
+  - first:
+      213: -6155860997756001346
+    second: GrayCastleTileSetExport_18
+  - first:
+      213: -7367843275026779664
+    second: GrayCastleTileSetExport_19
+  - first:
+      213: -7631425200603082745
+    second: GrayCastleTileSetExport_20
+  - first:
+      213: -3844491704140033854
+    second: GrayCastleTileSetExport_21
+  - first:
+      213: 7233035804489130545
+    second: GrayCastleTileSetExport_22
+  - first:
+      213: 1606458287846235076
+    second: GrayCastleTileSetExport_23
+  - first:
+      213: -2833838246535954368
+    second: GrayCastleTileSetExport_24
+  - first:
+      213: -2512255407615201571
+    second: GrayCastleTileSetExport_25
+  - first:
+      213: 7959066048291128652
+    second: GrayCastleTileSetExport_26
+  - first:
+      213: 7262465676427030949
+    second: GrayCastleTileSetExport_27
+  - first:
+      213: 2815761264683446972
+    second: GrayCastleTileSetExport_28
+  - first:
+      213: -6266792870661775065
+    second: GrayCastleTileSetExport_29
+  - first:
+      213: 4438776438236188060
+    second: GrayCastleTileSetExport_30
+  - first:
+      213: 2066354364266651536
+    second: GrayCastleTileSetExport_31
+  - first:
+      213: 7297177710307740332
+    second: GrayCastleTileSetExport_32
+  - first:
+      213: -4308162316493431411
+    second: GrayCastleTileSetExport_33
+  - first:
+      213: 2815545230450159938
+    second: GrayCastleTileSetExport_34
+  - first:
+      213: -2577774181358939128
+    second: GrayCastleTileSetExport_35
+  - first:
+      213: 811064532463148631
+    second: GrayCastleTileSetExport_36
+  - first:
+      213: 3937188619407059736
+    second: GrayCastleTileSetExport_37
+  - first:
+      213: 581750686648119176
+    second: GrayCastleTileSetExport_38
+  - first:
+      213: 6508215006000265525
+    second: GrayCastleTileSetExport_39
+  - first:
+      213: 4434708079988252217
+    second: GrayCastleTileSetExport_40
+  - first:
+      213: -8683233833991715524
+    second: GrayCastleTileSetExport_41
+  - first:
+      213: -332838668105372829
+    second: GrayCastleTileSetExport_42
+  - first:
+      213: 1618405315977266723
+    second: GrayCastleTileSetExport_43
+  - first:
+      213: 2999396667262369009
+    second: GrayCastleTileSetExport_44
+  - first:
+      213: -6811938420865680209
+    second: GrayCastleTileSetExport_45
+  - first:
+      213: 7100127906763066257
+    second: GrayCastleTileSetExport_46
+  - first:
+      213: 6035690045863965219
+    second: GrayCastleTileSetExport_47
+  - first:
+      213: -7981694707859075108
+    second: GrayCastleTileSetExport_48
+  - first:
+      213: 5902334748916538410
+    second: GrayCastleTileSetExport_49
+  - first:
+      213: 1871156020364992792
+    second: GrayCastleTileSetExport_50
+  - first:
+      213: -5017704737173293577
+    second: GrayCastleTileSetExport_51
+  - first:
+      213: -8417985608547287256
+    second: GrayCastleTileSetExport_52
+  - first:
+      213: -2573260523663077171
+    second: GrayCastleTileSetExport_53
+  - first:
+      213: -155907701836808817
+    second: GrayCastleTileSetExport_54
+  - first:
+      213: -4434634866047319935
+    second: GrayCastleTileSetExport_55
+  - first:
+      213: 6916346657793605804
+    second: GrayCastleTileSetExport_56
+  - first:
+      213: -2391929043129145943
+    second: GrayCastleTileSetExport_57
+  - first:
+      213: 4496607878311747850
+    second: GrayCastleTileSetExport_58
+  - first:
+      213: -3314497648573581703
+    second: GrayCastleTileSetExport_59
+  - first:
+      213: 8299830414027358004
+    second: GrayCastleTileSetExport_60
+  - first:
+      213: -3701339632846784400
+    second: GrayCastleTileSetExport_61
+  - first:
+      213: 2223604537269305447
+    second: GrayCastleTileSetExport_62
+  - first:
+      213: -137205685361283816
+    second: GrayCastleTileSetExport_63
+  - first:
+      213: 8093585233040400493
+    second: GrayCastleTileSetExport_64
+  - first:
+      213: 3264618182785478876
+    second: GrayCastleTileSetExport_65
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 253
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GrayCastleTileSetExport_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 263
+        width: 254
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644065409a87c43d0800000000000000
+      internalID: -3221066966159195066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrayCastleTileSetExport_1
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 263
+        width: 254
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b7364a41405e290800000000000000
+      internalID: -7861873087801492716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrayCastleTileSetExport_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 9
+        width: 254
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687d680ace53c5fc0800000000000000
+      internalID: -3504867119579342970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrayCastleTileSetExport_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 9
+        width: 254
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e22a2f174811c00800000000000000
+      internalID: 869621827996102192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

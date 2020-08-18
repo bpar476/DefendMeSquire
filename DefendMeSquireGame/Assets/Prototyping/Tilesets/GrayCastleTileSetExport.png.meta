@@ -4,19 +4,19 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -3221066966159195066
-    second: GrayCastleTileSetExport_0
+    second: GrayCastleTileSetExport_01
   - first:
       213: -7861873087801492716
-    second: GrayCastleTileSetExport_1
+    second: GrayCastleTileSetExport_02
   - first:
       213: 4928885833144941318
-    second: GrayCastleTileSetExport_2
+    second: GrayCastleTileSetExport_12
   - first:
       213: -3504867119579342970
-    second: GrayCastleTileSetExport_2
+    second: GrayCastleTileSetExport_12
   - first:
       213: 869621827996102192
-    second: GrayCastleTileSetExport_4
+    second: GrayCastleTileSetExport_11
   - first:
       213: -3826741237976371601
     second: GrayCastleTileSetExport_5
@@ -297,7 +297,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GrayCastleTileSetExport_0
+      name: GrayCastleTileSetExport_01
       rect:
         serializedVersion: 2
         x: 3
@@ -318,7 +318,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrayCastleTileSetExport_1
+      name: GrayCastleTileSetExport_02
       rect:
         serializedVersion: 2
         x: 257
@@ -339,10 +339,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrayCastleTileSetExport_2
+      name: GrayCastleTileSetExport_12
       rect:
         serializedVersion: 2
-        x: 3
+        x: 511
         y: 9
         width: 254
         height: 254
@@ -360,7 +360,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrayCastleTileSetExport_4
+      name: GrayCastleTileSetExport_11
       rect:
         serializedVersion: 2
         x: 257

@@ -4,22 +4,22 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -3221066966159195066
-    second: GrayCastleTileSetExport_01
+    second: BrickWallTile1
   - first:
       213: -7861873087801492716
-    second: GrayCastleTileSetExport_02
+    second: BrickWallTile2
   - first:
       213: 4928885833144941318
-    second: GrayCastleTileSetExport_12
+    second: WindowTile2
   - first:
       213: -3504867119579342970
-    second: GrayCastleTileSetExport_12
+    second: WindowTile2
   - first:
       213: 869621827996102192
-    second: GrayCastleTileSetExport_11
+    second: WindowTile1
   - first:
       213: -3826741237976371601
-    second: GrayCastleTileSetExport_5
+    second: WindowTile4
   - first:
       213: -3026653718038611733
     second: GrayCastleTileSetExport_6
@@ -37,10 +37,10 @@ TextureImporter:
     second: GrayCastleTileSetExport_10
   - first:
       213: 4617756428102515885
-    second: GrayCastleTileSetExport_11
+    second: WindowTile1
   - first:
       213: 3097497033627312875
-    second: GrayCastleTileSetExport_12
+    second: WindowTile2
   - first:
       213: 187967388588409697
     second: GrayCastleTileSetExport_13
@@ -200,6 +200,9 @@ TextureImporter:
   - first:
       213: 3264618182785478876
     second: GrayCastleTileSetExport_65
+  - first:
+      213: -1897186761488872888
+    second: WindowTile3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -297,13 +300,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GrayCastleTileSetExport_01
+      name: BrickWallTile1
       rect:
         serializedVersion: 2
-        x: 3
-        y: 263
-        width: 254
-        height: 254
+        x: 0
+        y: 547
+        width: 255
+        height: 253
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,13 +321,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrayCastleTileSetExport_02
+      name: BrickWallTile2
       rect:
         serializedVersion: 2
-        x: 257
-        y: 263
-        width: 254
-        height: 254
+        x: 255
+        y: 547
+        width: 253
+        height: 253
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,13 +342,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrayCastleTileSetExport_12
+      name: WindowTile2
       rect:
         serializedVersion: 2
-        x: 511
-        y: 9
-        width: 254
-        height: 254
+        x: 253
+        y: 262
+        width: 255
+        height: 252
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,13 +363,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrayCastleTileSetExport_11
+      name: WindowTile1
       rect:
         serializedVersion: 2
-        x: 257
-        y: 9
-        width: 254
-        height: 254
+        x: 0
+        y: 262
+        width: 253
+        height: 252
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,6 +379,48 @@ TextureImporter:
       bones: []
       spriteID: 03e22a2f174811c00800000000000000
       internalID: 869621827996102192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindowTile3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 253
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ac1e031b6dba5e0800000000000000
+      internalID: -1897186761488872888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindowTile4
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 9
+        width: 255
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e64177e1fa4eac0800000000000000
+      internalID: -3826741237976371601
       vertices: []
       indices: 
       edges: []

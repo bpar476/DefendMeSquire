@@ -6,7 +6,7 @@ public class SquireTaskSpawnPoint : MonoBehaviour, SquireTaskCompletionListener
 {
     public Vector2 spawnLocation;
     public int spawnDelaySeconds;
-    public SquireTask taskPrefab;
+    public ShieldPolishSquireTask taskPrefab;
 
     public List<GameObject> objectsActiveDuringThisTask;
 
@@ -20,9 +20,9 @@ public class SquireTaskSpawnPoint : MonoBehaviour, SquireTaskCompletionListener
         SetActivityOfPairedTasks(false);
     }
 
-    public SquireTask Spawn()
+    public ShieldPolishSquireTask Spawn()
     {
-        SquireTask task = Instantiate(taskPrefab, transform.position, Quaternion.identity);
+        ShieldPolishSquireTask task = Instantiate(taskPrefab, transform.position, Quaternion.identity);
         task.RegisterListener(this);
 
         SetActivityOfPairedTasks(true);

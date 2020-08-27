@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquireTask : MonoBehaviour
+public class ShieldPolishSquireTask : MonoBehaviour
 {
     public float duration;
 
@@ -32,11 +32,13 @@ public class SquireTask : MonoBehaviour
         loadingBar.gameObject.SetActive(false);
     }
 
-    public void RegisterListener(SquireTaskCompletionListener listener) {
+    public void RegisterListener(SquireTaskCompletionListener listener)
+    {
         listeners.Add(listener);
     }
 
-    public void DeRegisterListener(SquireTaskCompletionListener listener) {
+    public void DeRegisterListener(SquireTaskCompletionListener listener)
+    {
         listeners.Remove(listener);
     }
 
@@ -74,13 +76,15 @@ public class SquireTask : MonoBehaviour
             StopTaskCompletion();
         }
     }
-    
-    private void StartTaskCompletion() {
+
+    private void StartTaskCompletion()
+    {
         isPlayerDoingTask = true;
         loadingBar.gameObject.SetActive(true);
     }
 
-    private void StopTaskCompletion() {
+    private void StopTaskCompletion()
+    {
         isPlayerDoingTask = false;
         loadingBar.gameObject.SetActive(false);
     }
@@ -108,7 +112,8 @@ public class SquireTask : MonoBehaviour
         }
     }
 
-    private void ResetProgress() {
+    private void ResetProgress()
+    {
         time = 0;
         loadingBar.SetCompleteness(0);
         completeness = 0;

@@ -55,7 +55,7 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener,
 
     private void ActivateCurrentTask()
     {
-        SquireTask task = nextTaskSpawn.Spawn();
+        ShieldPolishSquireTask task = nextTaskSpawn.Spawn();
         task.RegisterListener(this);
         timer.RemoveStopwatch(timerId);
     }

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface SquireTaskCompletionListener
+public abstract class SquireTaskCompletionListener : MonoBehaviour
 {
-    void onTaskCompleted();
+    public abstract void onTaskCompleted();
 
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener, GlobalTimerStopwatch
+public class DelayedSquireTaskSet : SquireTaskCompletionListener, GlobalTimerStopwatch
 {
     public NextFloorProgressionAction progressionAction;
     public SquireTaskSpawnPoint[] squireTasks;
@@ -60,7 +60,7 @@ public class DelayedSquireTaskSet : MonoBehaviour, SquireTaskCompletionListener,
         timer.RemoveStopwatch(timerId);
     }
 
-    public void onTaskCompleted()
+    override public void onTaskCompleted()
     {
         if (currentTaskIndex == squireTasks.Length - 1)
         {

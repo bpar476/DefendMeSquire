@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquireTaskSpawnPoint : MonoBehaviour, SquireTaskCompletionListener
+public class SquireTaskSpawnPoint : SquireTaskCompletionListener
 {
     public Vector2 spawnLocation;
     public int spawnDelaySeconds;
@@ -15,7 +15,7 @@ public class SquireTaskSpawnPoint : MonoBehaviour, SquireTaskCompletionListener
         SetActivityOfPairedTasks(false);
     }
 
-    public void onTaskCompleted()
+    override public void onTaskCompleted()
     {
         SetActivityOfPairedTasks(false);
     }

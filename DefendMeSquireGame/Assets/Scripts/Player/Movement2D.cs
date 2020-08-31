@@ -6,6 +6,7 @@ public class Movement2D : MonoBehaviour
 {
     public float speed;
     public float maxMoveSpeed;
+    public List<GameObject> movementListeners;
     private Rigidbody2D rb2d;
 
     void Start()
@@ -39,6 +40,19 @@ public class Movement2D : MonoBehaviour
                 rb2d.velocity = new Vector2(0, rb2d.velocity.y);
             }
         }
+
+        movementListeners.ForEach(listener =>
+        {
+            var movementListener = listener.GetComponent<MovementListener>();
+            if (movementListener != null)
+            {
+                movementListener.OnMove(rb2d.velocity);
+            }
+            else
+            {
+                Debug.Log("movement listener does not have MovementListener component");
+            }
+        });
     }
 
     private bool IsFalling()

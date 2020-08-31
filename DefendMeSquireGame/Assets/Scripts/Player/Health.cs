@@ -8,6 +8,7 @@ public class Health : MonoBehaviour, Killable
     public int maxHitPoints;
     public HitPointsUI hitpointsUI;
     public RectTransform deathMenu;
+    public List<GameObject> deathListeners;
 
     private int currentHitPoints;
     private bool hasInit = false;
@@ -55,6 +56,18 @@ public class Health : MonoBehaviour, Killable
     public void Kill()
     {
         deathMenu.gameObject.SetActive(true);
+        deathListeners.ForEach(listener =>
+        {
+            var deathListener = listener.GetComponent<DeathListener>();
+            if (deathListener != null)
+            {
+                deathListener.OnDeath();
+            }
+            else
+            {
+                Debug.Log("Death listener assigned to health component does not have DeathListener component");
+            }
+        });
         StartCoroutine(KillPlayerAfterAllArrowSoundsStopped());
     }
 

@@ -220,7 +220,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefendMeSquireUICanvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 198886364738716946, guid: 870803b2c43ed0544b73e379c0d608b2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 870803b2c43ed0544b73e379c0d608b2, type: 3}
 --- !u!224 &5512874426217107614 stripped
 RectTransform:

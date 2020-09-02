@@ -31,6 +31,7 @@ public class Arrow : MonoBehaviour
         {
             audioSource.clip = impactSound;
         }
+        GetComponent<Animator>().enabled = false;
         audioSource.Play();
         ContactPoint2D contact = other.GetContact(0);
         Vector2 contactWorldPosition = contact.point;

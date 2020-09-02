@@ -1101,17 +1101,17 @@ PrefabInstance:
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: fireVelocity
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.62
+      value: -8.02
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.92
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
@@ -1314,7 +1314,7 @@ PrefabInstance:
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: trajectory.y
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
@@ -1334,17 +1334,17 @@ PrefabInstance:
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: fireVelocity
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.9
+      value: -7.62
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
@@ -2408,12 +2408,12 @@ PrefabInstance:
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: fireVelocity
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.18
+      value: 6.98
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
@@ -2660,7 +2660,7 @@ PrefabInstance:
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: trajectory.y
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
@@ -2680,17 +2680,17 @@ PrefabInstance:
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: fireVelocity
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.9
+      value: -7.62
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
@@ -3427,7 +3427,7 @@ PrefabInstance:
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: trajectory.y
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
@@ -3447,17 +3447,17 @@ PrefabInstance:
     - target: {fileID: 5776278377654377481, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: fireVelocity
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.9
+      value: -7.62
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.77
+      value: 1.0999999
       objectReference: {fileID: 0}
     - target: {fileID: 5776278377654377482, guid: 770503ddbf98eef40800348367a1e6ee,
         type: 3}

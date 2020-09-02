@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5776278377654377482}
   - component: {fileID: 5776278377654377481}
-  - component: {fileID: 2095505834471526495}
   m_Layer: 0
   m_Name: ArrowLauncher
   m_TagString: Untagged
@@ -51,17 +50,3 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8177420046337575242, guid: 615cfadefece2354f9c34637689beaaf,
     type: 3}
   gizmoColor: {r: 1, g: 0.66604304, b: 0.15566039, a: 1}
---- !u!114 &2095505834471526495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5776278377654377476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bcd35ce996fab447990138c00df1fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  warningTemplate: {fileID: 3084777826316637208, guid: a27a3f8570971b5479f8f02da9f41a3b,
-    type: 3}

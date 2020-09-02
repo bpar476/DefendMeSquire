@@ -11,7 +11,6 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
     public Color gizmoColor;
     private Vector2 normalizedTrajectory;
     private bool firedFirstShot = false;
-    private ArrowWarning warning;
     private bool hasWarned;
     private int stopwatchId;
     private GlobalTimer timer;
@@ -24,18 +23,12 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
 
     private void OnEnable()
     {
-        GetWarning().ActivateWarning();
         stopwatchId = GetTimer().AddStopwatch(this);
     }
 
     private void OnDisable()
     {
-        var warning = GetWarning();
         var timer = GetTimer();
-        if (warning != null)
-        {
-            warning.DeactivateWarning();
-        }
         if (timer != null)
         {
             timer.RemoveStopwatch(stopwatchId);
@@ -44,7 +37,6 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
 
     public void OnTick()
     {
-        GetWarning().DeactivateWarning();
         FireProjectile();
     }
 
@@ -62,7 +54,6 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
         if (!firedFirstShot)
         {
             firedFirstShot = true;
-            warning.DeactivateWarning();
         }
 
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
@@ -78,19 +69,7 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
 
     private GlobalTimer GetTimer()
     {
-        // if (timer == null)
-        {
-            timer = FindObjectOfType<GlobalTimer>();
-        }
+        timer = FindObjectOfType<GlobalTimer>();
         return timer;
-    }
-
-    private ArrowWarning GetWarning()
-    {
-        if (warning == null)
-        {
-            warning = GetComponent<ArrowWarning>();
-        }
-        return warning;
     }
 }

@@ -6,6 +6,10 @@ public class Arrow : MonoBehaviour
 {
     public AudioClip impactSound;
     public AudioClip fleshImpactSound;
+    /// <summary>
+    /// This sets the launch velocity which will be applied to the arrow once it has finished its summon animation via the LaunchArrow behaviour.
+    /// </summary>
+    public Vector2 launchVelocity;
     private AudioSource audioSource;
     private Rigidbody2D rb;
     private Vector2 cachedVelocity;
@@ -38,6 +42,15 @@ public class Arrow : MonoBehaviour
         rb.simulated = false;
         collided = true;
         GetComponent<Collider2D>().enabled = false;
+    }
+
+    /// <summary>
+
+    /// </summary>
+    /// <param name="velocity"></param>
+    public void SetLaunchVelocity(Vector2 velocity)
+    {
+        launchVelocity = velocity;
     }
 
     void Update()

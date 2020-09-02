@@ -66,9 +66,7 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
         }
 
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
-
-        Rigidbody2D projectileBody = projectile.GetComponent<Rigidbody2D>();
-        projectileBody.velocity = fireVelocity * normalizedTrajectory;
+        projectile.GetComponent<Arrow>().launchVelocity = fireVelocity * normalizedTrajectory;
     }
 
     private void OnDrawGizmosSelected()

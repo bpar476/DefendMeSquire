@@ -96,7 +96,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177420046337575242}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactSound: {fileID: 8300000, guid: 81e4a3df10bb86145bba1b9b30ec7acb, type: 3}
   fleshImpactSound: {fileID: 8300000, guid: 0fded27744a0f674584a664fdb132a8e, type: 3}
+  launchVelocity: {x: 0, y: 0}
 --- !u!114 &-3079554386619481163
 MonoBehaviour:
   m_ObjectHideFlags: 0

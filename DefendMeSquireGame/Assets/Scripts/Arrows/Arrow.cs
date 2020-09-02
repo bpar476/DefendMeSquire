@@ -9,7 +9,16 @@ public class Arrow : MonoBehaviour
     /// <summary>
     /// This sets the launch velocity which will be applied to the arrow once it has finished its summon animation via the LaunchArrow behaviour.
     /// </summary>
-    public Vector2 launchVelocity;
+    public Vector2 launchVelocity
+    {
+        get { return _launchVelocity; }
+        set
+        {
+            _launchVelocity = value;
+            updateRotationBasedOnVelocity(value);
+        }
+    }
+    private Vector2 _launchVelocity;
     private AudioSource audioSource;
     private Rigidbody2D rb;
     private Vector2 cachedVelocity;
@@ -59,8 +68,7 @@ public class Arrow : MonoBehaviour
         Vector2 currentVelocity = rb.velocity;
         if (velocityMeaningfullyChanged(currentVelocity) && !collided)
         {
-            float angle = Vector2.SignedAngle(Vector2.right, currentVelocity);
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            updateRotationBasedOnVelocity(currentVelocity);
         }
         cachedVelocity = currentVelocity;
     }
@@ -70,6 +78,12 @@ public class Arrow : MonoBehaviour
         bool xMeaningfullyChanged = floatsMeaningfullyDifferent(currentVelocity.x, cachedVelocity.x, 0.1f);
         bool yMeaningfullyChanged = floatsMeaningfullyDifferent(currentVelocity.y, cachedVelocity.y, 0.1f);
         return xMeaningfullyChanged || yMeaningfullyChanged;
+    }
+
+    private void updateRotationBasedOnVelocity(Vector2 velocity)
+    {
+        float angle = Vector2.SignedAngle(Vector2.right, velocity);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     private bool floatsMeaningfullyDifferent(float a, float b, float tolerance)

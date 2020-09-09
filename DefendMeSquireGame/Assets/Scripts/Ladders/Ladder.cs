@@ -1,23 +1,22 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(LadderClimbing))]
 public class Ladder : MonoBehaviour
 {
     public float climbSpeed;
     private GameObject player;
+    private PlayerAnimation playerAnimation;
     private bool playerInLadder;
     private bool playerOnLadder;
     private bool playerCanReachLadder;
+    private bool playerIsClimbing;
 
     private LadderClimbing climbing;
 
-    private void Start()
+    private void Awake()
     {
         climbing = GetComponent<LadderClimbing>();
-        if (climbing == null)
-        {
-            throw new System.Exception("must have ladder climbing component on ladder");
-        }
     }
 
     // Update is called once per frame
@@ -32,7 +31,18 @@ public class Ladder : MonoBehaviour
             {
                 if (verticalInput < 0 || playerCanReachLadder)
                 {
-                    playerOnLadder = true;
+                    if (!playerOnLadder)
+                    {
+                        playerOnLadder = true;
+                        playerAnimation.OnLadderMount();
+                    }
+
+                    if (!playerIsClimbing)
+                    {
+                        playerIsClimbing = true;
+                        playerAnimation.OnLadderClimb();
+                    }
+
                     climbing.ClimbLadder(playerRb, Mathf.Sign(verticalInput) * climbSpeed);
                     UpdateCanReachLadder();
                 }
@@ -42,6 +52,8 @@ public class Ladder : MonoBehaviour
                 if (playerOnLadder)
                 {
                     playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
+                    playerIsClimbing = false;
+                    playerAnimation.OnLadderHalt();
                 }
             }
         }
@@ -57,7 +69,7 @@ public class Ladder : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             player = other.gameObject;
-
+            playerAnimation = player.GetComponent<PlayerAnimation>();
             playerInLadder = true;
             Rigidbody2D rb2d = player.GetComponent<Rigidbody2D>();
             rb2d.gravityScale = 0;
@@ -79,11 +91,14 @@ public class Ladder : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
+            player = other.gameObject;
+            playerAnimation = player.GetComponent<PlayerAnimation>();
             playerInLadder = false;
             playerOnLadder = false;
             playerCanReachLadder = false;
+            playerIsClimbing = false;
+            playerAnimation.OnLadderDismount();
 
-            player = other.gameObject;
 
             Rigidbody2D rb2d = player.GetComponent<Rigidbody2D>();
             rb2d.gravityScale = 1;

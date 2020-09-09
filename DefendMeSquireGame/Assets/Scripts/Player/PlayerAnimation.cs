@@ -8,6 +8,8 @@ public class PlayerAnimation : MonoBehaviour, MovementListener, DeathListener
 
     private static readonly string TRIGGER_DEATH = "die";
     private static readonly string FLOAT_SPEED = "speed";
+    private static readonly string BOOL_CLIMBING = "climbing";
+    private static readonly string BOOL_ON_LADDER = "onLadder";
 
     private Animator animator;
     private bool turnedAround = false;
@@ -41,4 +43,26 @@ public class PlayerAnimation : MonoBehaviour, MovementListener, DeathListener
         }
         animator.SetFloat(FLOAT_SPEED, Mathf.Abs(xSpeed));
     }
+
+    public void OnLadderMount()
+    {
+        animator.SetBool(BOOL_ON_LADDER, true);
+    }
+
+    public void OnLadderClimb()
+    {
+        animator.SetBool(BOOL_CLIMBING, true);
+    }
+
+    public void OnLadderHalt()
+    {
+        animator.SetBool(BOOL_CLIMBING, false);
+    }
+
+    public void OnLadderDismount()
+    {
+        animator.SetBool(BOOL_ON_LADDER, false);
+    }
+
+
 }

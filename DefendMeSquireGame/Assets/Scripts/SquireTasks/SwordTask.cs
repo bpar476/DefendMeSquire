@@ -45,11 +45,15 @@ public class SwordTask : MonoBehaviour
         Movement2D playerMovement = player.GetComponent<Movement2D>();
         originalPlayerMoveSpeed = playerMovement.maxMoveSpeed;
         playerMovement.maxMoveSpeed = 1;
+
+        player.GetComponent<PlayerAnimation>().OnPickupSword();
     }
 
     public void GiveSword(Transform receiver)
     {
         transform.SetParent(receiver);
         player.GetComponent<Movement2D>().maxMoveSpeed = originalPlayerMoveSpeed;
+
+        player.GetComponent<PlayerAnimation>().OnDropSword();
     }
 }

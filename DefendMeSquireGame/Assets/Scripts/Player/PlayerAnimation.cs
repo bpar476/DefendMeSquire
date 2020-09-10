@@ -10,6 +10,7 @@ public class PlayerAnimation : MonoBehaviour, MovementListener, DeathListener
     private static readonly string FLOAT_SPEED = "speed";
     private static readonly string BOOL_CLIMBING = "climbing";
     private static readonly string BOOL_ON_LADDER = "onLadder";
+    private static readonly string BOOL_HOLDING_SWORD = "holdingSword";
 
     private Animator animator;
     private Rigidbody2D rb2d;
@@ -79,5 +80,14 @@ public class PlayerAnimation : MonoBehaviour, MovementListener, DeathListener
         animator.SetBool(BOOL_ON_LADDER, false);
     }
 
+    public void OnPickupSword()
+    {
+        animator.SetBool(BOOL_HOLDING_SWORD, true);
+    }
+
+    public void OnDropSword()
+    {
+        animator.SetBool(BOOL_HOLDING_SWORD, false);
+    }
 
 }

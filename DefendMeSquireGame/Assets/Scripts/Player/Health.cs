@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(Movement2D))]
 public class Health : MonoBehaviour, Killable
 {
     public int maxHitPoints;
@@ -56,6 +57,7 @@ public class Health : MonoBehaviour, Killable
     public void Kill()
     {
         deathMenu.gameObject.SetActive(true);
+        FreezeMovement();
         deathListeners.ForEach(listener =>
         {
             var deathListener = listener.GetComponent<DeathListener>();
@@ -69,6 +71,16 @@ public class Health : MonoBehaviour, Killable
             }
         });
         StartCoroutine(KillPlayerAfterAllArrowSoundsStopped());
+    }
+
+    private void FreezeMovement()
+    {
+        GetComponent<Movement2D>().enabled = false;
+        foreach (var ladder in GameObject.FindObjectsOfType<Ladder>())
+        {
+            ladder.enabled = false;
+        }
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     private IEnumerator KillPlayerAfterAllArrowSoundsStopped()

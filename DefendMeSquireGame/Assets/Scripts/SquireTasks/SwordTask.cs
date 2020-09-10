@@ -11,13 +11,21 @@ public class SwordTask : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        isPlayerOnSword = true;
-        player = other.gameObject;
+        // Only the player and the sword collector can collide with this so we still
+        // need to check the tag
+        if (other.tag == "Player")
+        {
+            isPlayerOnSword = true;
+            player = other.gameObject;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        isPlayerOnSword = false;
+        if (other.tag == "Player")
+        {
+            isPlayerOnSword = false;
+        }
     }
 
     // Update is called once per frame

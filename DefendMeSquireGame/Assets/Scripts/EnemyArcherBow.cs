@@ -6,12 +6,14 @@ public class EnemyArcherBow : MonoBehaviour
 {
     [SerializeField]
     private Transform bow;
+    private ArrowFirer firer;
 
     private float originalXScale;
 
     private void Awake()
     {
         originalXScale = transform.localScale.x;
+        firer = GetComponentInChildren<ArrowFirer>();
     }
 
     private void FixedUpdate()
@@ -27,6 +29,7 @@ public class EnemyArcherBow : MonoBehaviour
         transform.localScale = new Vector3(direction * originalXScale, transform.localScale.y, transform.localScale.z);
 
         var lineFromBowToPlayer = playerPosition - bow.transform.position;
+        firer.trajectory = lineFromBowToPlayer;
         var angleBetweenBowAndPlayer = Vector2.Angle(direction * Vector2.left, lineFromBowToPlayer);
         bow.localEulerAngles = new Vector3(0, 0, angleBetweenBowAndPlayer);
     }

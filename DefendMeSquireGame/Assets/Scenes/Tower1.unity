@@ -1044,6 +1044,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 492877925}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &562317847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8177420046337575242, guid: 615cfadefece2354f9c34637689beaaf,
+    type: 3}
+  m_PrefabInstance: {fileID: 351866457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &622326474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 734490739}
   - component: {fileID: 734490740}
+  - component: {fileID: 734490741}
   m_Layer: 0
   m_Name: EnemyArcherBow
   m_TagString: Untagged
@@ -1326,6 +1333,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &734490741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734490738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d39586319dbf9e469d69148c838d94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  period: 2
+  timerOffset: 0
+  trajectory: {x: -1, y: 1}
+  fireVelocity: 8
+  projectilePrefab: {fileID: 562317847}
+  gizmoColor: {r: 0.9811321, g: 0.9726427, b: 0.06941971, a: 0}
 --- !u!1 &738197340
 GameObject:
   m_ObjectHideFlags: 0

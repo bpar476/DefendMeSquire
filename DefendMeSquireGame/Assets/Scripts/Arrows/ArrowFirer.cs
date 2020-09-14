@@ -9,17 +9,11 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
     public float fireVelocity;
     public GameObject projectilePrefab;
     public Color gizmoColor;
-    private Vector2 normalizedTrajectory;
+    private Vector2 normalizedTrajectory { get { return trajectory.normalized; } }
     private bool firedFirstShot = false;
     private bool hasWarned;
     private int stopwatchId;
     private GlobalTimer timer;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        normalizedTrajectory = trajectory.normalized;
-    }
 
     private void OnEnable()
     {

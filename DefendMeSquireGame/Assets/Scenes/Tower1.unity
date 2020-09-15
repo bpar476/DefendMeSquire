@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   period: 2
-  timerOffset: 0
+  timerOffset: 0.2
   trajectory: {x: 0, y: 0}
   fireVelocity: 8
   projectilePrefab: {fileID: 6922619813436952926, guid: 811ea92267495c44da8a7bf74b10aaa3,

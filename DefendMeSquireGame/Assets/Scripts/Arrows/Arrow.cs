@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(AudioSource), typeof(Animator))]
 public class Arrow : MonoBehaviour
 {
     public AudioClip impactSound;
     public AudioClip fleshImpactSound;
+    public bool isSummoned;
+
+    private Animator animator;
+    private static readonly string BOOL_SUMMONED = "Summon";
+
     /// <summary>
     /// This sets the launch velocity which will be applied to the arrow once it has finished its summon animation via the LaunchArrow behaviour.
     /// </summary>
@@ -24,10 +30,12 @@ public class Arrow : MonoBehaviour
     private Vector2 cachedVelocity;
     private bool collided;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+        animator.SetBool(BOOL_SUMMONED, isSummoned);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

@@ -32,19 +32,19 @@ public class EnemyArcherBow : MonoBehaviour
 
         transform.localScale = new Vector3(direction * originalXScale, transform.localScale.y, transform.localScale.z);
 
-        var lineFromBowToPlayer = playerPosition - bow.transform.position;
-        var angleBetweenBowAndPlayer = Vector2.Angle(direction * Vector2.left, lineFromBowToPlayer);
-
         var playerRb = player.GetComponent<Rigidbody2D>();
-
+        var aimOffset = 0f;
         // Aim a bit higher so that the arrow falls to the player
-        var aimOffset = -30 * direction;
         if (playerRb.velocity.x > 1)
         {
-
+            aimOffset = 1.0f;
+        }
+        else if (playerRb.velocity.x < 1)
+        {
+            aimOffset = -1.0f;
         }
 
-        var playerX = playerPosition.x;
+        var playerX = playerPosition.x + aimOffset;
         var ourX = firer.transform.position.x;
         var arrowVelocityXComponent = (playerX - ourX) / ARROW_TRAVEL_DURATION;
         var playerY = playerPosition.y;

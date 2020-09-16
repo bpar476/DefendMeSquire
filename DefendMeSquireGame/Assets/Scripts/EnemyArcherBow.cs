@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyArcherBow : MonoBehaviour
 {
 
-    private static readonly float ARROW_TRAVEL_DURATION = 1.5f;
+    private static readonly float ARROW_TRAVEL_DURATION = 1.0f;
 
     [SerializeField]
     private Transform bow;
@@ -44,9 +44,6 @@ public class EnemyArcherBow : MonoBehaviour
 
         }
 
-        var aimAngle = angleBetweenBowAndPlayer + aimOffset;
-        bow.localEulerAngles = new Vector3(0, 0, aimAngle);
-
         var playerX = playerPosition.x;
         var ourX = firer.transform.position.x;
         var arrowVelocityXComponent = (playerX - ourX) / ARROW_TRAVEL_DURATION;
@@ -59,5 +56,9 @@ public class EnemyArcherBow : MonoBehaviour
         var trajectory = new Vector3(arrowVelocityXComponent, arrowVelocityYComponent);
         firer.trajectory = trajectory;
         firer.fireVelocity = trajectory.magnitude;
+
+        var aimAngle = Mathf.Atan(arrowVelocityYComponent / arrowVelocityXComponent);
+        Debug.Log(aimAngle);
+        bow.localEulerAngles = new Vector3(0, 0, direction * aimAngle * Mathf.Rad2Deg);
     }
 }

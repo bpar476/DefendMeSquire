@@ -6,7 +6,6 @@ public class Drawbridge : AbstractTriggeredEvent
 {
     public override void OnTrigger()
     {
-        Debug.Log("dropping drawbridge");
         StartCoroutine(LowerDrawbridge());
     }
 

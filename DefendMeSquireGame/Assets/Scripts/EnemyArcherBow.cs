@@ -39,7 +39,7 @@ public class EnemyArcherBow : MonoBehaviour
         {
             aimOffset = 1.0f;
         }
-        else if (playerRb.velocity.x < 1)
+        else if (playerRb.velocity.x < -1)
         {
             aimOffset = -1.0f;
         }
@@ -58,7 +58,6 @@ public class EnemyArcherBow : MonoBehaviour
         firer.fireVelocity = trajectory.magnitude;
 
         var aimAngle = Mathf.Atan(arrowVelocityYComponent / arrowVelocityXComponent);
-        Debug.Log(aimAngle);
         bow.localEulerAngles = new Vector3(0, 0, direction * aimAngle * Mathf.Rad2Deg);
     }
 }

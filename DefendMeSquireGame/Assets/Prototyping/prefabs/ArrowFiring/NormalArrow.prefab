@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalArrow
       objectReference: {fileID: 0}
+    - target: {fileID: 8177420046337575243, guid: 615cfadefece2354f9c34637689beaaf,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8177420046337575245, guid: 615cfadefece2354f9c34637689beaaf,
         type: 3}
       propertyPath: m_LocalPosition.x

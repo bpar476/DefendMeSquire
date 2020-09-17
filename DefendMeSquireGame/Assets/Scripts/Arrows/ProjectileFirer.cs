@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
+public class ProjectileFirer : MonoBehaviour, GlobalTimerStopwatch
 {
     public int period;
     public float timerOffset;
@@ -51,7 +51,7 @@ public class ArrowFirer : MonoBehaviour, GlobalTimerStopwatch
         }
 
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
-        projectile.GetComponent<Arrow>().launchVelocity = fireVelocity * normalizedTrajectory;
+        projectile.GetComponent<Projectile>().launchVelocity = fireVelocity * normalizedTrajectory;
     }
 
     private void OnDrawGizmosSelected()

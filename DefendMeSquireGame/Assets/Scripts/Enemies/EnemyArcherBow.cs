@@ -9,19 +9,25 @@ public class EnemyArcherBow : MonoBehaviour
 
     [SerializeField]
     private Transform bow;
-    private ArrowFirer firer;
+    private ProjectileFirer firer;
 
     private float originalXScale;
 
     private void Awake()
     {
         originalXScale = transform.localScale.x;
-        firer = GetComponentInChildren<ArrowFirer>();
+        firer = GetComponentInChildren<ProjectileFirer>();
     }
 
     private void FixedUpdate()
     {
         var player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            Debug.Log("player is null. They are probably dead");
+            this.enabled = false;
+            return;
+        }
         var playerPosition = player.transform.position;
         float direction = 1.0f;
 

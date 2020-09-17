@@ -3,17 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource), typeof(SpriteRenderer), typeof(Collider2D))]
-public class Fireball : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class Fireball : Projectile
 {
 
+    [SerializeField]
+    private float fireballDuration;
+    private float fireTime;
     private AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
     private new Collider2D collider;
+    private Rigidbody2D rb2d;
+    private bool hasDetonated;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
+        rb2d = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        rb2d.velocity = launchVelocity;
+        fireTime = Time.time;
+    }
+
+    private void Update()
+    {
+        if (!hasDetonated)
+        {
+            if (Time.time - fireTime > fireballDuration)
+            {
+                DetonateFireball();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,10 +51,14 @@ public class Fireball : MonoBehaviour
 
     private void DetonateFireball()
     {
-        audioSource.Play();
-        spriteRenderer.enabled = false;
-        collider.enabled = false;
-        StartCoroutine(DestroyFireBallAfterClipFinished());
+        if (!hasDetonated)
+        {
+            hasDetonated = true;
+            audioSource.Play();
+            spriteRenderer.enabled = false;
+            collider.enabled = false;
+            StartCoroutine(DestroyFireBallAfterClipFinished());
+        }
     }
 
     private IEnumerator DestroyFireBallAfterClipFinished()

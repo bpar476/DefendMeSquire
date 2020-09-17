@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33767fbf1d0a37247a376d39c20f5441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireballDuration: 1.2
 --- !u!82 &5497952614265300818
 AudioSource:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
 {
     private static int numFlickers = 3;
     public GameObject warningTemplate;
-    private ArrowFirer firer;
+    private ProjectileFirer firer;
     private Camera cam;
     private GameObject warning;
     private bool warningActive = false;
@@ -24,7 +24,7 @@ public class ArrowWarning : MonoBehaviour, GlobalTimerStopwatch
 
     private void Initialise()
     {
-        firer = GetComponent<ArrowFirer>();
+        firer = GetComponent<ProjectileFirer>();
         cam = Camera.main;
     }
 

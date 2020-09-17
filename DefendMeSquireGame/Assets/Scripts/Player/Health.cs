@@ -31,7 +31,17 @@ public class Health : MonoBehaviour, Killable
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Damage damage = other.gameObject.GetComponent<Damage>();
+        TakeDamageFromCollision(other.gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        TakeDamageFromCollision(other.gameObject);
+    }
+
+    private void TakeDamageFromCollision(GameObject other)
+    {
+        Damage damage = other.GetComponent<Damage>();
         if (damage != null)
         {
             currentHitPoints -= damage.hits;

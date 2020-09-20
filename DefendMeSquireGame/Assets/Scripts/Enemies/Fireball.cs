@@ -6,6 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Fireball : Projectile
 {
+    [SerializeField]
+    private AudioClip castClip;
+    [SerializeField]
+    private AudioClip impactClip;
 
     [SerializeField]
     private float fireballDuration;
@@ -28,6 +32,8 @@ public class Fireball : Projectile
     {
         rb2d.velocity = launchVelocity;
         fireTime = Time.time;
+        audioSource.clip = castClip;
+        audioSource.Play();
     }
 
     private void Update()
@@ -54,6 +60,7 @@ public class Fireball : Projectile
         if (!hasDetonated)
         {
             hasDetonated = true;
+            audioSource.clip = impactClip;
             audioSource.Play();
             spriteRenderer.enabled = false;
             collider.enabled = false;

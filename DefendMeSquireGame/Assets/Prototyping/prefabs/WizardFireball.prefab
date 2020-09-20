@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33767fbf1d0a37247a376d39c20f5441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  castClip: {fileID: 8300000, guid: fdfb77cb01bd3e7489799216063b8350, type: 3}
+  impactClip: {fileID: 8300000, guid: 86ba58e91e972114ebaa3af92a5a288e, type: 3}
   fireballDuration: 1.2
 --- !u!82 &5497952614265300818
 AudioSource:

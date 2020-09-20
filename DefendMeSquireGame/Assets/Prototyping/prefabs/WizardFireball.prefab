@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5497952614265300816}
   - component: {fileID: 5497952614265300817}
   - component: {fileID: 5497952614265300818}
+  - component: {fileID: 3341446337858241211}
   m_Layer: 0
   m_Name: WizardFireball
   m_TagString: Untagged
@@ -245,3 +246,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3341446337858241211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5497952614265301163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed4cf8e17de6f84ca93a94e8f9fa8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

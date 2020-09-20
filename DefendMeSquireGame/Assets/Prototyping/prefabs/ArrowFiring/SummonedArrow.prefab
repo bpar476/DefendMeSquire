@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: -3079554386619481163}
   - component: {fileID: 9013287180245195517}
   - component: {fileID: -1324636730641607420}
+  - component: {fileID: 612876922780526603}
   m_Layer: 10
-  m_Name: Arrow
+  m_Name: SummonedArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,3 +282,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &612876922780526603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177420046337575242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed4cf8e17de6f84ca93a94e8f9fa8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

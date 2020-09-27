@@ -978,6 +978,7 @@ GameObject:
   - component: {fileID: 591991849}
   - component: {fileID: 591991850}
   - component: {fileID: 591991851}
+  - component: {fileID: 591991852}
   m_Layer: 0
   m_Name: WizardBoss
   m_TagString: Untagged
@@ -1062,7 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d39586319dbf9e469d69148c838d94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  period: 1
+  period: 3
   timerOffset: 0
   trajectory: {x: 1, y: -1}
   fireVelocity: 8
@@ -1100,6 +1101,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &591991852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591991846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d8b1e4d27463c48ba15b17af2a1e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &622326474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,7 +2017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066427638}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.58, y: 14.503, z: 0}
+  m_LocalPosition: {x: 2.77, y: 14.45, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 1489766203}
@@ -2527,6 +2540,7 @@ GameObject:
   - component: {fileID: 1475564136}
   - component: {fileID: 1475564135}
   - component: {fileID: 1475564138}
+  - component: {fileID: 1475564139}
   m_Layer: 13
   m_Name: SwordCollector
   m_TagString: Untagged
@@ -2618,7 +2632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475564134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.902, y: 14.391, z: 0}
+  m_LocalPosition: {x: -2.95, y: 14.4, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1489766203}
@@ -2637,6 +2651,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completionListeners: []
+--- !u!114 &1475564139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475564134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132f984fbcc1e4547ace131fe6d4029d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementPoints:
+  - {x: 6.5, y: 14.4}
+  - {x: 6.5, y: 17.4}
+  moveSpeed: 2
+  archerEnemy: {fileID: 1365126362}
 --- !u!1 &1489766202
 GameObject:
   m_ObjectHideFlags: 0

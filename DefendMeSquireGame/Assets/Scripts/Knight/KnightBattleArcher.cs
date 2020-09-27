@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class KnightBattleArcher : MonoBehaviour
 {
     [SerializeField]
@@ -11,6 +12,16 @@ public class KnightBattleArcher : MonoBehaviour
     [SerializeField]
     private GameObject archerEnemy;
 
+    [SerializeField]
+    private GameObject brawl;
+
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     private int currentDestinationIndex = 0;
     private Vector2 currentDestination;
 
@@ -19,12 +30,20 @@ public class KnightBattleArcher : MonoBehaviour
     {
         if (currentDestinationIndex >= movementPoints.Length)
         {
-            currentDestination = new Vector2(archerEnemy.transform.position.x, transform.position.y);
-            MoveTowardsDestination();
-
-            if (HasReachedDestination())
+            // TODO refactor to state machine so this never happens
+            if (archerEnemy == null)
             {
-                FightArcher();
+                Debug.Log("archer probably dead. Ignoring");
+            }
+            else
+            {
+                currentDestination = new Vector2(archerEnemy.transform.position.x, transform.position.y);
+                MoveTowardsDestination();
+
+                if (HasReachedDestination())
+                {
+                    FightArcher();
+                }
             }
         }
         else
@@ -51,6 +70,18 @@ public class KnightBattleArcher : MonoBehaviour
 
     private void FightArcher()
     {
-        Debug.Log("fighting archer");
+        spriteRenderer.enabled = false;
+        Destroy(archerEnemy.gameObject);
+        brawl.SetActive(true);
+
+        StartCoroutine(EndBrawl(3f));
+    }
+
+    private IEnumerator EndBrawl(float brawlDuration)
+    {
+        yield return new WaitForSeconds(brawlDuration);
+
+        brawl.SetActive(false);
+        spriteRenderer.enabled = true;
     }
 }

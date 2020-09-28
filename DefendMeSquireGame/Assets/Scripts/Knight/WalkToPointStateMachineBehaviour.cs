@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Naive2DMovementAgent))]
 public class WalkToPointStateMachineBehaviour : MyStateMachineBehaviour
 {
     [SerializeField]
@@ -9,21 +10,17 @@ public class WalkToPointStateMachineBehaviour : MyStateMachineBehaviour
     [SerializeField]
     private float moveSpeed = 2;
 
+    private Naive2DMovementAgent movementAgent;
+
+    public override void OnStateEnter()
+    {
+        movementAgent = GetComponent<Naive2DMovementAgent>();
+        movementAgent.TargetLocation = locationToWalkTo;
+    }
+
     public override bool OnStateUpdate()
     {
-        MoveTowardsDestination();
-
-        return HasReachedDestination();
-    }
-
-    private void MoveTowardsDestination()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, locationToWalkTo, moveSpeed * Time.deltaTime);
-    }
-
-    private bool HasReachedDestination()
-    {
-        return transform.position.Equals(locationToWalkTo);
+        return movementAgent.ReachedDestination;
     }
 
     private void OnDrawGizmosSelected()

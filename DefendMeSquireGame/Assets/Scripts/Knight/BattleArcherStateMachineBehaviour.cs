@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(SpriteRenderer), typeof(Naive2DMovementAgent))]
 public class BattleArcherStateMachineBehaviour : MyStateMachineBehaviour
 {
     [SerializeField]
@@ -15,12 +15,14 @@ public class BattleArcherStateMachineBehaviour : MyStateMachineBehaviour
     private float moveSpeed = 2;
 
     private SpriteRenderer spriteRenderer;
+    private Naive2DMovementAgent movementAgent;
 
     private bool hasFinishedFight = false;
 
     public override void OnStateEnter()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        movementAgent = GetComponent<Naive2DMovementAgent>();
     }
 
     public override bool OnStateUpdate()
@@ -31,11 +33,9 @@ public class BattleArcherStateMachineBehaviour : MyStateMachineBehaviour
         }
         else
         {
-            // TODO refactor this to re-use WalkToPointStateMachineBehaviour
-            var currentDestination = new Vector2(archerEnemy.transform.position.x, transform.position.y);
-            transform.position = Vector2.MoveTowards(transform.position, currentDestination, moveSpeed * Time.deltaTime);
+            movementAgent.TargetLocation = new Vector2(archerEnemy.transform.position.x, transform.position.y);
 
-            if (transform.position.Equals(currentDestination))
+            if (movementAgent.ReachedDestination)
             {
                 FightArcher();
             }

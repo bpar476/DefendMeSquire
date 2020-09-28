@@ -56,7 +56,8 @@ public class Fireball : Projectile
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        // Layer 15 is the shield
+        if (other.gameObject.tag == "Player" || other.gameObject.layer == 15)
         {
             DetonateFireball();
         }

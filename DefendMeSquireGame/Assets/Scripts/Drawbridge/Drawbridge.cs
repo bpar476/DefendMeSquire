@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drawbridge : AbstractTriggeredEvent
+public class Drawbridge : MonoBehaviour
 {
-    public override void OnTrigger()
+
+    [SerializeField]
+    private AbstractTrigger trigger;
+
+    private void Start()
+    {
+        trigger.OnTrigger += OnTrigger;
+    }
+
+    private void OnTrigger()
     {
         StartCoroutine(LowerDrawbridge());
     }

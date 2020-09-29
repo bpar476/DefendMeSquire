@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ValveTrigger : MonoBehaviour
+public class ValveTrigger : AbstractTrigger
 {
 
     [SerializeField]
@@ -10,7 +10,6 @@ public class ValveTrigger : MonoBehaviour
     [SerializeField]
     private float crankTime;
     [SerializeField]
-    private AbstractTriggeredEvent onFinishCranking;
     private bool isPlayerOnValve = false;
     private bool cranking = false;
     private float crankProgress = 0;
@@ -75,7 +74,7 @@ public class ValveTrigger : MonoBehaviour
 
     private void CompleteCrank()
     {
-        onFinishCranking.OnTrigger();
+        OnTrigger.Invoke();
         completed = true;
     }
 

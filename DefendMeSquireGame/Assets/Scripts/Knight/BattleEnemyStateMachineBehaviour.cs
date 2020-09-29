@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer), typeof(Naive2DMovementAgent))]
-public class BattleArcherStateMachineBehaviour : MyStateMachineBehaviour
+public class BattleEnemyStateMachineBehaviour : MyStateMachineBehaviour
 {
     [SerializeField]
-    private GameObject archerEnemy;
+    private GameObject enemy;
 
     [SerializeField]
     private GameObject brawl;
@@ -27,27 +27,27 @@ public class BattleArcherStateMachineBehaviour : MyStateMachineBehaviour
 
     public override bool OnStateUpdate()
     {
-        if (archerEnemy == null)
+        if (enemy == null)
         {
-            Debug.Log("archer probably dead. Ignoring");
+            Debug.Log("enemy probably dead. Ignoring");
         }
         else
         {
-            movementAgent.TargetLocation = new Vector2(archerEnemy.transform.position.x, transform.position.y);
+            movementAgent.TargetLocation = new Vector2(enemy.transform.position.x, transform.position.y);
 
             if (movementAgent.ReachedDestination)
             {
-                FightArcher();
+                FightEnemy();
             }
         }
 
         return hasFinishedFight;
     }
 
-    private void FightArcher()
+    private void FightEnemy()
     {
         spriteRenderer.enabled = false;
-        Destroy(archerEnemy.gameObject);
+        Destroy(enemy.gameObject);
         brawl.SetActive(true);
 
         StartCoroutine(EndBrawl(3f));

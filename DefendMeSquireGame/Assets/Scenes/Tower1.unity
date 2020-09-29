@@ -1156,6 +1156,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4886332334043912631}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &642334794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4886332333612341757, guid: 834544e51dae56345aed0b4a7dfadccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 4886332334043912631}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af8e28e8b462c340b62a52905c5f2a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &671038820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,6 +2547,7 @@ GameObject:
   - component: {fileID: 1475564143}
   - component: {fileID: 1475564144}
   - component: {fileID: 1475564145}
+  - component: {fileID: 1475564146}
   m_Layer: 13
   m_Name: Knight
   m_TagString: Untagged
@@ -2693,6 +2706,7 @@ MonoBehaviour:
   - {fileID: 1475564143}
   - {fileID: 1475564144}
   - {fileID: 1475564145}
+  - {fileID: 1475564146}
 --- !u!114 &1475564142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2719,7 +2733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1935d0ebcdff1d429fbc762545d0ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  archerEnemy: {fileID: 1365126362}
+  enemy: {fileID: 1365126362}
   brawl: {fileID: 1759036227}
   moveSpeed: 2
 --- !u!114 &1475564144
@@ -2749,6 +2763,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 1858724056}
+  trigger: {fileID: 642334794}
+--- !u!114 &1475564146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475564134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1935d0ebcdff1d429fbc762545d0ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 591991846}
+  brawl: {fileID: 1759036227}
+  moveSpeed: 2
 --- !u!1 &1489766202
 GameObject:
   m_ObjectHideFlags: 0

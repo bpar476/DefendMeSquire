@@ -7,6 +7,20 @@ public class RaiseShieldStateMachineBehaviour : MyStateMachineBehaviour
     [SerializeField]
     private GameObject shield;
 
+    [SerializeField]
+    private AbstractTrigger trigger;
+
+    // TODO refactor this to use the TriggeredEventStateMachineBehaviour
+    private bool hasFinished;
+
+    private void Awake()
+    {
+        trigger.OnTrigger += () =>
+        {
+            hasFinished = true;
+        };
+    }
+
     public override void OnStateEnter()
     {
         shield.SetActive(true);
@@ -14,7 +28,6 @@ public class RaiseShieldStateMachineBehaviour : MyStateMachineBehaviour
 
     public override bool OnStateUpdate()
     {
-        // Listen for when crank has been fully turned
-        return false;
+        return hasFinished;
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Drawbridge : MonoBehaviour
+/// <summary>
+/// Lowers the drawbridge. Invokes its trigger after drawbridge has finished lowering.
+/// </summary>
+public class Drawbridge : AbstractTrigger
 {
 
     [SerializeField]
@@ -10,10 +12,10 @@ public class Drawbridge : MonoBehaviour
 
     private void Start()
     {
-        trigger.OnTrigger += OnTrigger;
+        trigger.OnTrigger += StartLowerDrawbridge;
     }
 
-    private void OnTrigger()
+    private void StartLowerDrawbridge()
     {
         StartCoroutine(LowerDrawbridge());
     }
@@ -26,6 +28,9 @@ public class Drawbridge : MonoBehaviour
             yield return null;
         }
         transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        OnTrigger?.Invoke();
+
         yield return null;
     }
 }

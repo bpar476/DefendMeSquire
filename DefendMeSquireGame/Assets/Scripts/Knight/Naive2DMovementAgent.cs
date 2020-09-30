@@ -10,6 +10,11 @@ public class Naive2DMovementAgent : MonoBehaviour
 
     private float tolerance = 0.05f;
 
+    private void Awake()
+    {
+        TargetLocation = transform.position;
+    }
+
     public bool ReachedDestination
     {
         get

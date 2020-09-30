@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordCollector : MonoBehaviour
+public class SwordCollector : AbstractTrigger
 {
     public SquireTaskCompletionListener[] completionListeners;
 
@@ -22,5 +22,6 @@ public class SwordCollector : MonoBehaviour
         {
             listener.onTaskCompleted();
         }
+        OnTrigger.Invoke();
     }
 }

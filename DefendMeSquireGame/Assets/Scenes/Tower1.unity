@@ -7314,6 +7314,7 @@ GameObject:
   - component: {fileID: 1475564138}
   - component: {fileID: 1475564139}
   - component: {fileID: 1475564141}
+  - component: {fileID: 1475564147}
   - component: {fileID: 1475564140}
   - component: {fileID: 1475564142}
   - component: {fileID: 1475564143}
@@ -7473,6 +7474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequence:
+  - {fileID: 1475564147}
   - {fileID: 1475564140}
   - {fileID: 1475564142}
   - {fileID: 1475564143}
@@ -7551,6 +7553,19 @@ MonoBehaviour:
   enemy: {fileID: 591991846}
   brawl: {fileID: 1759036227}
   moveSpeed: 2
+--- !u!114 &1475564147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475564134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a19b4d3a11341f4999a5062205242d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 1475564138}
 --- !u!1 &1489766202
 GameObject:
   m_ObjectHideFlags: 0

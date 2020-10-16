@@ -13,13 +13,43 @@ TextureImporter:
     second: Knight_2
   - first:
       213: -2114218972603513699
-    second: Knight_0
+    second: Knight_idle_0
   - first:
       213: -8035677405174726406
-    second: Knight_1
+    second: Knight_idle_1
   - first:
       213: 263105368767281767
     second: Knight_2
+  - first:
+      213: -5711848221618334454
+    second: Knight_idle_0
+  - first:
+      213: -8985680732576350864
+    second: Knight_idle_1
+  - first:
+      213: 5457420103614929235
+    second: Knight_sword_equip
+  - first:
+      213: 8480205167599975839
+    second: Knight_run_0
+  - first:
+      213: 1086178698101399146
+    second: Knight_run_1
+  - first:
+      213: 5891436520834976337
+    second: Knight_climb_0
+  - first:
+      213: -7232600524240232993
+    second: Knight_climb_1
+  - first:
+      213: -3132395524043622482
+    second: Knight_8
+  - first:
+      213: -3454224475449390428
+    second: Knight_9
+  - first:
+      213: -1931806161188048838
+    second: Knight_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -117,7 +147,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight_0
+      name: Knight_idle_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 800
+        width: 198
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a051e7b1e407bb0b0800000000000000
+      internalID: -5711848221618334454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_idle_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 800
+        width: 198
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07df6bd5bf27c4380800000000000000
+      internalID: -8985680732576350864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_sword_equip
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 400
+        width: 198
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3591b0a6ba6acbb40800000000000000
+      internalID: 5457420103614929235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_run_0
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 400
+        width: 198
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d7a3d7badbfa570800000000000000
+      internalID: 8480205167599975839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_run_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 400
+        width: 198
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e1ee665c1e21f00800000000000000
+      internalID: 1086178698101399146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_climb_0
       rect:
         serializedVersion: 2
         x: 14
@@ -131,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d948398cb09c8a2e0800000000000000
-      internalID: -2114218972603513699
+      spriteID: 15ac1213d4692c150800000000000000
+      internalID: 5891436520834976337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Knight_1
+      name: Knight_climb_1
       rect:
         serializedVersion: 2
         x: 212
@@ -152,8 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af08dee89f98b7090800000000000000
-      internalID: -8035677405174726406
+      spriteID: fdd5b56a424a0ab90800000000000000
+      internalID: -7232600524240232993
       vertices: []
       indices: 
       edges: []

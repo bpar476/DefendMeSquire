@@ -23,5 +23,6 @@ public class SwordCollector : AbstractTrigger
             listener.onTaskCompleted();
         }
         OnTrigger.Invoke();
+        Destroy(sword.gameObject);
     }
 }

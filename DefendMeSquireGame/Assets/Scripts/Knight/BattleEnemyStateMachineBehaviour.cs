@@ -27,11 +27,7 @@ public class BattleEnemyStateMachineBehaviour : MyStateMachineBehaviour
 
     public override bool OnStateUpdate()
     {
-        if (enemy == null)
-        {
-            Debug.Log("enemy probably dead. Ignoring");
-        }
-        else
+        if (enemy != null)
         {
             movementAgent.TargetLocation = new Vector2(enemy.transform.position.x, transform.position.y);
 

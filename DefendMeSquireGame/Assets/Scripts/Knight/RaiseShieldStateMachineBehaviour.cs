@@ -17,6 +17,8 @@ public class RaiseShieldStateMachineBehaviour : MyStateMachineBehaviour
     // TODO refactor this to use the TriggeredEventStateMachineBehaviour
     private bool hasFinished;
 
+    private Vector3 originalScale;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -40,5 +42,10 @@ public class RaiseShieldStateMachineBehaviour : MyStateMachineBehaviour
             shield.SetActive(false);
         }
         return hasFinished;
+    }
+
+    public override void OnStateExit()
+    {
+        transform.localScale = originalScale;
     }
 }

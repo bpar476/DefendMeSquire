@@ -24,7 +24,6 @@ public class EnemyArcherBow : MonoBehaviour
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
-            Debug.Log("player is null. They are probably dead");
             this.enabled = false;
             return;
         }

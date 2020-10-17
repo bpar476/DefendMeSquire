@@ -10,7 +10,7 @@ TextureImporter:
     second: Knight_idle_1
   - first:
       213: 7827260208125532704
-    second: Knight_2
+    second: Knight_shield
   - first:
       213: -2114218972603513699
     second: Knight_idle_0
@@ -19,7 +19,7 @@ TextureImporter:
     second: Knight_idle_1
   - first:
       213: 263105368767281767
-    second: Knight_2
+    second: Knight_shield
   - first:
       213: -5711848221618334454
     second: Knight_idle_0
@@ -50,6 +50,48 @@ TextureImporter:
   - first:
       213: -1931806161188048838
     second: Knight_10
+  - first:
+      213: -2114218972603513699
+    second: Knight_idle_0
+  - first:
+      213: -8035677405174726406
+    second: Knight_idle_1
+  - first:
+      213: 3450997735807040617
+    second: Knight_sword_equip
+  - first:
+      213: 8232408098378994317
+    second: Knight_run_0
+  - first:
+      213: 6711311966061068734
+    second: Knight_run_1
+  - first:
+      213: 1320856842718640427
+    second: Knight_climb_0
+  - first:
+      213: 4419623587611197797
+    second: Knight_climb_1
+  - first:
+      213: -5711848221618334454
+    second: Knight_idle_0
+  - first:
+      213: -8985680732576350864
+    second: Knight_idle_1
+  - first:
+      213: 5457420103614929235
+    second: Knight_sword_equip
+  - first:
+      213: 8480205167599975839
+    second: Knight_run_0
+  - first:
+      213: 1086178698101399146
+    second: Knight_run_1
+  - first:
+      213: 5891436520834976337
+    second: Knight_climb_0
+  - first:
+      213: -7232600524240232993
+    second: Knight_climb_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -155,7 +197,7 @@ TextureImporter:
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,7 +218,7 @@ TextureImporter:
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,6 +226,27 @@ TextureImporter:
       bones: []
       spriteID: 07df6bd5bf27c4380800000000000000
       internalID: -8985680732576350864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_shield
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 800
+        width: 198
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a5fdd40b300ac60800000000000000
+      internalID: 7827260208125532704
       vertices: []
       indices: 
       edges: []
@@ -197,7 +260,7 @@ TextureImporter:
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,7 +281,7 @@ TextureImporter:
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -234,12 +297,12 @@ TextureImporter:
       name: Knight_run_1
       rect:
         serializedVersion: 2
-        x: 410
+        x: 409
         y: 400
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,7 +323,7 @@ TextureImporter:
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,7 +344,7 @@ TextureImporter:
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

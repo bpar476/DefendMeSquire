@@ -55,7 +55,10 @@ public class ProjectileFirer : MonoBehaviour, GlobalTimerStopwatch
         }
 
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
-        projectile.GetComponent<Projectile>().launchVelocity = fireVelocity * normalizedTrajectory;
+        var launchVelocity = fireVelocity * normalizedTrajectory;
+        projectile.GetComponent<Projectile>().launchVelocity = launchVelocity;
+        float angle = Vector2.SignedAngle(Vector2.right, launchVelocity);
+        projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
         Fired?.Invoke();
     }
 

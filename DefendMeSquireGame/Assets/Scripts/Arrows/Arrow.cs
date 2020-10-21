@@ -13,7 +13,6 @@ public class Arrow : Projectile
     private Animator animator;
     private static readonly string BOOL_SUMMONED = "Summon";
 
-    private Vector2 _launchVelocity;
     private AudioSource audioSource;
     private Rigidbody2D rb;
 

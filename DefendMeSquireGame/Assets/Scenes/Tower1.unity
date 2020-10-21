@@ -7193,7 +7193,6 @@ GameObject:
   - component: {fileID: 1311376051}
   - component: {fileID: 1311376050}
   - component: {fileID: 1311376049}
-  - component: {fileID: 1311376048}
   - component: {fileID: 1311376047}
   - component: {fileID: 1311376046}
   - component: {fileID: 1311376045}
@@ -7206,6 +7205,8 @@ GameObject:
   - component: {fileID: 1311376058}
   - component: {fileID: 1311376059}
   - component: {fileID: 1311376060}
+  - component: {fileID: 1311376048}
+  - component: {fileID: 1311376062}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -7305,12 +7306,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1311376044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c1a9f24ac376a47838385391f83acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1311376049}
-  suppressBlockAutoSelect: 0
-  waitForFrames: 1
+  suppressBlockAutoSelect: 1
+  tagFilter:
+  - Player
+  FireOn: 1
+  colliderVar: {fileID: 0}
 --- !u!114 &1311376049
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7325,7 +7329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -94.278366
+    x: -95.278366
     y: 127.76282
     width: 165
     height: 40
@@ -7364,7 +7368,7 @@ MonoBehaviour:
   scrollPos: {x: 712.5, y: 20.737183}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 400
+  blockViewHeight: 642
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -7374,8 +7378,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1311376049}
-  selectedCommands:
-  - {fileID: 1311376058}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -7395,7 +7398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311376044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.47, y: 14.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7743,6 +7746,32 @@ MonoBehaviour:
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!61 &1311376062
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311376044}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1365126362
 GameObject:
   m_ObjectHideFlags: 0
@@ -52283,7 +52312,7 @@ PrefabInstance:
     - target: {fileID: 6387120618061472154, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6387120618061472155, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
@@ -52293,12 +52322,12 @@ PrefabInstance:
     - target: {fileID: 6387120618061472155, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: upperBound
-      value: 17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6387120618061472155, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: lowerBound
-      value: 17
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6387120618061472157, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
@@ -52323,12 +52352,12 @@ PrefabInstance:
     - target: {fileID: 7653156313539781165, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.5
+      value: -3.41
       objectReference: {fileID: 0}
     - target: {fileID: 7653156313539781165, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.24
+      value: -6.86
       objectReference: {fileID: 0}
     - target: {fileID: 7653156313539781166, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}

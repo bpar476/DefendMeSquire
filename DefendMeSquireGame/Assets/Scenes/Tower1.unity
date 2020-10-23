@@ -7216,7 +7216,6 @@ GameObject:
   - component: {fileID: 1311376065}
   - component: {fileID: 1311376071}
   - component: {fileID: 1311376070}
-  - component: {fileID: 1311376069}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -7341,7 +7340,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -95.278366
     y: 127.76282
-    width: 128.5567
+    width: 168.5567
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7390,8 +7389,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1311376068}
-  selectedCommands:
-  - {fileID: 1311376065}
+  selectedCommands: []
   variables:
   - {fileID: 1311376061}
   description: 
@@ -8198,7 +8196,7 @@ MonoBehaviour:
     vector3Val: {x: 0, y: 0, z: 0}
 --- !u!114 &1311376065
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8226,7 +8224,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1311376066
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8253,7 +8251,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1311376067
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8292,16 +8290,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 165.8505
-    y: 123.99478
-    width: 135.7732
+    x: 364.82095
+    y: 131.21136
+    width: 175.7732
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 14
   blockName: End of game narrative
   description: 
-  eventHandler: {fileID: 1311376069}
+  eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1311376067}
   - {fileID: 1311376066}
@@ -8309,24 +8307,9 @@ MonoBehaviour:
   - {fileID: 1311376071}
   - {fileID: 1311376070}
   suppressAllAutoSelections: 0
---- !u!114 &1311376069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311376044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1311376068}
-  suppressBlockAutoSelect: 0
-  waitForFrames: 1
 --- !u!114 &1311376070
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8353,7 +8336,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1311376071
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8835,6 +8818,7 @@ GameObject:
   - component: {fileID: 1475564150}
   - component: {fileID: 1475564146}
   - component: {fileID: 1475564156}
+  - component: {fileID: 1475564158}
   - component: {fileID: 1475564157}
   m_Layer: 13
   m_Name: Knight
@@ -9006,6 +8990,7 @@ MonoBehaviour:
   - {fileID: 1475564150}
   - {fileID: 1475564146}
   - {fileID: 1475564156}
+  - {fileID: 1475564158}
 --- !u!114 &1475564142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9227,6 +9212,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   king: {fileID: 1424272523}
+--- !u!114 &1475564158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475564134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a0f58cda3607f4aa927425f66ee0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowchartToTrigger: {fileID: 1311376050}
 --- !u!1 &1489766202
 GameObject:
   m_ObjectHideFlags: 0
@@ -52960,7 +52958,7 @@ PrefabInstance:
     - target: {fileID: 6387120618061472154, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.4
+      value: 16.3
       objectReference: {fileID: 0}
     - target: {fileID: 6387120618061472155, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
@@ -53000,12 +52998,12 @@ PrefabInstance:
     - target: {fileID: 7653156313539781165, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.6
+      value: 14.5
       objectReference: {fileID: 0}
     - target: {fileID: 7653156313539781165, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.28
+      value: -7.37
       objectReference: {fileID: 0}
     - target: {fileID: 7653156313539781166, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}

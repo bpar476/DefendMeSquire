@@ -29,6 +29,6 @@ public class TriggerFlowchartStateMachineBehaviour : MyStateMachineBehaviour
 
     public override bool OnStateUpdate()
     {
-        return hasTriggered && !flowchartToTrigger.HasExecutingBlocks();
+        return hasTriggered;
     }
 }

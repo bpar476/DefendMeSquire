@@ -7220,6 +7220,7 @@ GameObject:
   - component: {fileID: 1311376073}
   - component: {fileID: 1311376072}
   - component: {fileID: 1311376069}
+  - component: {fileID: 1311376075}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -7392,8 +7393,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1311376049}
-  selectedCommands: []
+  - {fileID: 1311376068}
+  selectedCommands:
+  - {fileID: 1311376075}
   variables:
   - {fileID: 1311376061}
   description: 
@@ -8240,10 +8242,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 16
   indentLevel: 0
-  storyText: '[Princess] Thank you brave warriors. How could I ever repay you!'
+  storyText: Thank you brave warriors. How could I ever repay you!
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
+  character: {fileID: 1424272526}
+  portrait: {fileID: 21300000, guid: 90077a1c4f2e83049b236c8cad0703fa, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -8294,7 +8296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 617.3981
+    x: 616.3981
     y: 129.1495
     width: 172
     height: 40
@@ -8309,11 +8311,12 @@ MonoBehaviour:
   - {fileID: 1311376066}
   - {fileID: 1311376065}
   - {fileID: 1311376071}
+  - {fileID: 1311376075}
   - {fileID: 1311376070}
   suppressAllAutoSelections: 0
 --- !u!114 &1311376069
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8328,8 +8331,8 @@ MonoBehaviour:
   storyText: Squire, must I do everything myself! Lower the drawbridge for me, spinning
     that wheel should do the trick. I'll protect you from the fireballs.
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
+  character: {fileID: 1836860388}
+  portrait: {fileID: 21300000, guid: 3eae24bc89bba254aad3b10b2b803b39, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -8462,8 +8465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 21
   indentLevel: 0
-  storyText: Aah... Now this is a fine weapon. Prepare to meet your end scum! I'm
-    coming your highness!
+  storyText: Aah... Now this is a fine weapon. Prepare to meet your end scum!
   description: 
   character: {fileID: 1836860388}
   portrait: {fileID: 21300000, guid: 3eae24bc89bba254aad3b10b2b803b39, type: 3}
@@ -8503,6 +8505,24 @@ MonoBehaviour:
   commandList:
   - {fileID: 1311376073}
   suppressAllAutoSelections: 0
+--- !u!114 &1311376075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311376044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 24
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1.5
+  durationOLD: 0
 --- !u!1 &1365126362
 GameObject:
   m_ObjectHideFlags: 0
@@ -8710,6 +8730,7 @@ GameObject:
   - component: {fileID: 1424272523}
   - component: {fileID: 1424272524}
   - component: {fileID: 1424272525}
+  - component: {fileID: 1424272526}
   m_Layer: 0
   m_Name: King
   m_TagString: Untagged
@@ -8801,6 +8822,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1424272526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424272522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: King
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 90077a1c4f2e83049b236c8cad0703fa, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1 &1445216006
 GameObject:
   m_ObjectHideFlags: 0

@@ -7216,6 +7216,10 @@ GameObject:
   - component: {fileID: 1311376065}
   - component: {fileID: 1311376071}
   - component: {fileID: 1311376070}
+  - component: {fileID: 1311376074}
+  - component: {fileID: 1311376073}
+  - component: {fileID: 1311376072}
+  - component: {fileID: 1311376069}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -7340,7 +7344,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -95.278366
     y: 127.76282
-    width: 168.5567
+    width: 165
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7376,11 +7380,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 712.5, y: 25.489754}
+  scrollPos: {x: 489.09293, y: -23.211227}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 642
-  zoom: 0.97
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -7388,7 +7392,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1311376068}
+  - {fileID: 1311376049}
   selectedCommands: []
   variables:
   - {fileID: 1311376061}
@@ -8290,9 +8294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 364.82095
-    y: 131.21136
-    width: 175.7732
+    x: 617.3981
+    y: 129.1495
+    width: 172
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8307,6 +8311,34 @@ MonoBehaviour:
   - {fileID: 1311376071}
   - {fileID: 1311376070}
   suppressAllAutoSelections: 0
+--- !u!114 &1311376069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311376044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 23
+  indentLevel: 0
+  storyText: Squire, must I do everything myself! Lower the drawbridge for me, spinning
+    that wheel should do the trick. I'll protect you from the fireballs.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &1311376070
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8389,6 +8421,88 @@ MonoBehaviour:
   stringEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1311376072
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311376044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 401.96378
+    y: 131.21123
+    width: 168
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 22
+  blockName: CommandTurnWheel
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1311376069}
+  suppressAllAutoSelections: 0
+--- !u!114 &1311376073
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311376044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 21
+  indentLevel: 0
+  storyText: Aah... Now this is a fine weapon. Prepare to meet your end scum! I'm
+    coming your highness!
+  description: 
+  character: {fileID: 1836860388}
+  portrait: {fileID: 21300000, guid: 3eae24bc89bba254aad3b10b2b803b39, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1311376074
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311376044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 179.2526
+    y: 130.18044
+    width: 117
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 20
+  blockName: SwordEquip
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1311376073}
+  suppressAllAutoSelections: 0
 --- !u!1 &1365126362
 GameObject:
   m_ObjectHideFlags: 0
@@ -8805,6 +8919,7 @@ GameObject:
   - component: {fileID: 1475564141}
   - component: {fileID: 1475564147}
   - component: {fileID: 1475564149}
+  - component: {fileID: 1475564159}
   - component: {fileID: 1475564155}
   - component: {fileID: 1475564154}
   - component: {fileID: 1475564140}
@@ -8814,6 +8929,7 @@ GameObject:
   - component: {fileID: 1475564143}
   - component: {fileID: 1475564151}
   - component: {fileID: 1475564144}
+  - component: {fileID: 1475564160}
   - component: {fileID: 1475564145}
   - component: {fileID: 1475564150}
   - component: {fileID: 1475564146}
@@ -8977,6 +9093,7 @@ MonoBehaviour:
   sequence:
   - {fileID: 1475564147}
   - {fileID: 1475564149}
+  - {fileID: 1475564159}
   - {fileID: 1475564155}
   - {fileID: 1475564154}
   - {fileID: 1475564140}
@@ -8986,6 +9103,7 @@ MonoBehaviour:
   - {fileID: 1475564143}
   - {fileID: 1475564151}
   - {fileID: 1475564144}
+  - {fileID: 1475564160}
   - {fileID: 1475564145}
   - {fileID: 1475564150}
   - {fileID: 1475564146}
@@ -9225,6 +9343,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flowchartToTrigger: {fileID: 1311376050}
+  flowchartBlock: End of game narrative
+--- !u!114 &1475564159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475564134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a0f58cda3607f4aa927425f66ee0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowchartToTrigger: {fileID: 1311376050}
+  flowchartBlock: SwordEquip
+--- !u!114 &1475564160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475564134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a0f58cda3607f4aa927425f66ee0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowchartToTrigger: {fileID: 1311376050}
+  flowchartBlock: CommandTurnWheel
 --- !u!1 &1489766202
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class TriggerFlowchartStateMachineBehaviour : MyStateMachineBehaviour
     {
         Debug.Log("triggering block");
         hasTriggered = true;
-        flowchartToTrigger.ExecuteBlock("End of game narrative");
+        flowchartToTrigger.ExecuteBlock(flowchartBlock);
     }
 
     public override bool OnStateUpdate()

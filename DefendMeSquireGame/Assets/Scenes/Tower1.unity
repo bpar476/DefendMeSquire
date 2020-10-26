@@ -5780,6 +5780,7 @@ GameObject:
   - component: {fileID: 591991851}
   - component: {fileID: 591991852}
   - component: {fileID: 591991853}
+  - component: {fileID: 591991854}
   m_Layer: 0
   m_Name: WizardBoss
   m_TagString: Untagged
@@ -5865,10 +5866,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d39586319dbf9e469d69148c838d94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  period: 3
+  period: 2
   timerOffset: 0
   trajectory: {x: 1, y: -1}
-  fireVelocity: 4
+  fireVelocity: 5.5
   projectilePrefab: {fileID: 5497952614265301163, guid: dd5d11670b6b56946b31257487d0ab75,
     type: 3}
   gizmoColor: {r: 1, g: 0.19551288, b: 0, a: 1}
@@ -5931,6 +5932,18 @@ MonoBehaviour:
   particleRateIncreaseRate: 1.05
   maxParticles: 100
   particleIncreateRate: 5
+--- !u!114 &591991854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591991846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e31ce2d88a5e2c41be98b67fa56b9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &622326474
 GameObject:
   m_ObjectHideFlags: 0
@@ -6226,7 +6239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d39586319dbf9e469d69148c838d94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  period: 2
+  period: 4
   timerOffset: 0.2
   trajectory: {x: 0, y: 0}
   fireVelocity: 8
@@ -7111,6 +7124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939f0a58686379149884eef0ba9d8850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovementWhileCarrying: 1.5
 --- !u!61 &1066427642
 BoxCollider2D:
   m_ObjectHideFlags: 0

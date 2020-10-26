@@ -20,7 +20,7 @@ public class GlobalTimer : MonoBehaviour
         public TimerData(float offset, float period, float currentTime, GlobalTimerStopwatch listener, int id)
         {
             this.period = period;
-            this.lastTick = currentTime - period + offset;
+            this.lastTick = currentTime + offset;
             this.listener = listener;
             this.active = true;
             this.id = id;

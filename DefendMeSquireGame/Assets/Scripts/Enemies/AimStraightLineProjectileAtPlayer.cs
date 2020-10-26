@@ -6,15 +6,18 @@ using UnityEngine;
 public class AimStraightLineProjectileAtPlayer : MonoBehaviour
 {
 
-    private ProjectileFirer firer;
+    private Vector3 _trajectoryToPlayer;
 
-    private void Awake()
+    public Vector3 Trajectory
     {
-        firer = GetComponent<ProjectileFirer>();
-        AimAtPlayer();
+        get
+        {
+            AimAtPlayer();
+            return _trajectoryToPlayer;
+        }
     }
 
-    private void Update()
+    private void Awake()
     {
         AimAtPlayer();
     }
@@ -30,7 +33,7 @@ public class AimStraightLineProjectileAtPlayer : MonoBehaviour
         }
         else
         {
-            firer.trajectory = player.transform.position - transform.position;
+            _trajectoryToPlayer = player.transform.position - transform.position;
         }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwordTask : MonoBehaviour
 {
+    [SerializeField]
+    private float playerMovementWhileCarrying = 1;
     private bool isPlayerOnSword = false;
     private GameObject player = null;
     private bool isPlayerHoldingSword = false;
@@ -44,7 +46,7 @@ public class SwordTask : MonoBehaviour
 
         Movement2D playerMovement = player.GetComponent<Movement2D>();
         originalPlayerMoveSpeed = playerMovement.maxMoveSpeed;
-        playerMovement.maxMoveSpeed = 1;
+        playerMovement.maxMoveSpeed = playerMovementWhileCarrying;
 
         player.GetComponent<PlayerAnimation>().OnPickupSword();
     }

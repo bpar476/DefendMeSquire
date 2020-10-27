@@ -11,6 +11,13 @@ public class SwordTask : MonoBehaviour
     private bool isPlayerHoldingSword = false;
     private float originalPlayerMoveSpeed;
 
+    private SquireTaskTutorial tutorial;
+
+    private void Awake()
+    {
+        tutorial = GetComponent<SquireTaskTutorial>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Only the player and the sword collector can collide with this so we still
@@ -35,6 +42,7 @@ public class SwordTask : MonoBehaviour
     {
         if (!isPlayerHoldingSword && isPlayerOnSword && Input.GetKeyDown(KeyCode.E))
         {
+            tutorial.HideTutorial();
             PickUpSword();
         }
     }

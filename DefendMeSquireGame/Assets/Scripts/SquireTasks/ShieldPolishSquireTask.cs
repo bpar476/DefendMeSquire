@@ -20,6 +20,13 @@ public class ShieldPolishSquireTask : MonoBehaviour
 
     private List<SquireTaskCompletionListener> listeners = new List<SquireTaskCompletionListener>();
 
+    private SquireTaskTutorial tutorial;
+
+    private void Awake()
+    {
+        tutorial = GetComponent<SquireTaskTutorial>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,6 +116,8 @@ public class ShieldPolishSquireTask : MonoBehaviour
             StopTaskCompletion();
 
             listeners.ForEach(listener => listener.onTaskCompleted());
+
+            tutorial.HideTutorial();
         }
     }
 

@@ -31,7 +31,7 @@ public class ShieldPolishSquireTask : MonoBehaviour
     void Start()
     {
         loadingBar = GetComponentInChildren<LoadingBar>();
-        myRenderer = GetComponent<SpriteRenderer>();
+        myRenderer = GetComponentInChildren<SpriteRenderer>();
         if (loadingBar == null || myRenderer == null)
         {
             throw new System.Exception("Task not set up properly");

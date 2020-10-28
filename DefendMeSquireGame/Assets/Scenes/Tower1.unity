@@ -8049,6 +8049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorial: {fileID: 1326324431}
+  disableOnAwake: 1
 --- !u!1 &1241779364
 GameObject:
   m_ObjectHideFlags: 0
@@ -8155,6 +8156,18 @@ MonoBehaviour:
   valve: {fileID: 943900579}
   crankTime: 2.5
   isPlayerOnValve: 0
+--- !u!114 &1253554266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4975806864153396515, guid: 996ac3136a47067488be1d7065cb738a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3464605667460641343}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574220fb0d8170d40aefcd9e19e8e04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1264613148
 GameObject:
   m_ObjectHideFlags: 0
@@ -8347,6 +8360,7 @@ GameObject:
   - component: {fileID: 1311376072}
   - component: {fileID: 1311376069}
   - component: {fileID: 1311376075}
+  - component: {fileID: 1311376076}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -8471,7 +8485,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -95.278366
     y: 127.76282
-    width: 165
+    width: 125
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8481,6 +8495,7 @@ MonoBehaviour:
   eventHandler: {fileID: 1311376048}
   commandList:
   - {fileID: 1311376063}
+  - {fileID: 1311376076}
   - {fileID: 1311376064}
   - {fileID: 1311376047}
   - {fileID: 1311376057}
@@ -8518,8 +8533,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1311376049}
+  selectedCommands:
+  - {fileID: 1311376076}
   variables:
   - {fileID: 1311376061}
   description: 
@@ -9422,7 +9439,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 616.3981
     y: 129.1495
-    width: 172
+    width: 132
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9564,7 +9581,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 401.96378
     y: 131.21123
-    width: 168
+    width: 128
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9618,7 +9635,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 179.2526
     y: 130.18044
-    width: 117
+    width: 77
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9647,6 +9664,61 @@ MonoBehaviour:
     floatRef: {fileID: 0}
     floatVal: 1.5
   durationOLD: 0
+--- !u!114 &1311376076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311376044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d9ff288f3904c05ada7ac9c9a075bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 25
+  indentLevel: 1
+  description: Fire Checkpoint
+  delay: 0
+  invokeType: 0
+  staticEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1253554266}
+        m_MethodName: ShowNotification
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  booleanParameter:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  booleanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  integerParameter:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  integerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  floatParameter:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  stringParameter:
+    stringRef: {fileID: 0}
+    stringVal: 
+  stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1326324431
 GameObject:
   m_ObjectHideFlags: 0
@@ -54805,6 +54877,41 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[292].second.m_AllTileFlags
       value: 1073741825
       objectReference: {fileID: 0}
+    - target: {fileID: 5138000759232395142, guid: 996ac3136a47067488be1d7065cb738a,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138000759232395142, guid: 996ac3136a47067488be1d7065cb738a,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138000759232395142, guid: 996ac3136a47067488be1d7065cb738a,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138000759232395142, guid: 996ac3136a47067488be1d7065cb738a,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138000759232395142, guid: 996ac3136a47067488be1d7065cb738a,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138000759232395142, guid: 996ac3136a47067488be1d7065cb738a,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138000759232395142, guid: 996ac3136a47067488be1d7065cb738a,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281448959
+      objectReference: {fileID: 0}
     - target: {fileID: 6237404975164519030, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_ChunkCullingBounds.x
@@ -54854,6 +54961,11 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798814824390258614, guid: 996ac3136a47067488be1d7065cb738a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7653156313539781165, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}

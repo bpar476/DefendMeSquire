@@ -17,6 +17,8 @@ public class Health : MonoBehaviour, Killable
     private void Start()
     {
         currentHitPoints = maxHitPoints;
+        if (CheckpointManager.Instance.HasCheckpointed())
+            transform.position = new Vector3(-5.6f, 14.5f);
     }
 
     private void Update()

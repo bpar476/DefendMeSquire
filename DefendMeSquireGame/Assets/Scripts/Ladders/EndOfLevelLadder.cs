@@ -38,4 +38,10 @@ public class EndOfLevelLadder : NextFloorProgressionAction
             yield return new WaitForSeconds(interval);
         }
     }
+
+    public void SetEndState()
+    {
+        ladderCover.transform.eulerAngles = new Vector3(ladderCover.transform.eulerAngles.x, ladderCover.transform.eulerAngles.y, ladderCover.transform.eulerAngles.z - coverRotation);
+        ladder.transform.position = new Vector3(ladder.transform.position.x, ladder.transform.position.y - ladderDropHeight, ladder.transform.position.z);
+    }
 }

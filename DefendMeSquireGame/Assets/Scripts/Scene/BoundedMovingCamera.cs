@@ -16,6 +16,8 @@ public class BoundedMovingCamera : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if (CheckpointManager.Instance.HasCheckpointed())
+            upperBound = 17f;
     }
 
     private void OnDrawGizmosSelected()

@@ -23,11 +23,14 @@ public class WizardFireballAiming : MonoBehaviour
 
     void Update()
     {
-        var vectorToPlayer = aimAtPlayer.Trajectory;
-        var playerVelocity = playerRb.velocity;
-        var aimOffset = new Vector3(signOrZero(playerVelocity.x) * 1.5f, 0, 0);
+        if (playerRb != null)
+        {
+            var vectorToPlayer = aimAtPlayer.Trajectory;
+            var playerVelocity = playerRb.velocity;
+            var aimOffset = new Vector3(signOrZero(playerVelocity.x) * 1.5f, 0, 0);
 
-        firer.trajectory = vectorToPlayer + aimOffset;
+            firer.trajectory = vectorToPlayer + aimOffset;
+        }
     }
 
     private float signOrZero(float x)

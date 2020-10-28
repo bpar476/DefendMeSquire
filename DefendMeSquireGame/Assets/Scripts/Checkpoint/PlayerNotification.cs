@@ -24,9 +24,6 @@ public class PlayerNotification : MonoBehaviour
         originalX = text.rectTransform.localPosition.x;
         originalZ = text.rectTransform.localPosition.z;
 
-        Debug.Log(originalR);
-        Debug.Log(originalG);
-
         SetTextAlpha(0);
     }
 

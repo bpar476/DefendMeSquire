@@ -10619,7 +10619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35355b59c6ac4c4db6e40f99dc7a97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerName: run
+  triggerName: Run_shield
 --- !u!114 &1475564151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55010,7 +55010,7 @@ PrefabInstance:
     - target: {fileID: 6387120618061472154, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 16.529999
       objectReference: {fileID: 0}
     - target: {fileID: 6387120618061472155, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
@@ -55020,7 +55020,7 @@ PrefabInstance:
     - target: {fileID: 6387120618061472155, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: upperBound
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6387120618061472155, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
@@ -55055,7 +55055,7 @@ PrefabInstance:
     - target: {fileID: 7653156313539781165, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.37
+      value: 14.73
       objectReference: {fileID: 0}
     - target: {fileID: 7653156313539781165, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}

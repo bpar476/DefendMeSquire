@@ -46,10 +46,10 @@ TextureImporter:
     second: Knight_8
   - first:
       213: -3454224475449390428
-    second: Knight_9
+    second: Knight_run_shield_0
   - first:
       213: -1931806161188048838
-    second: Knight_10
+    second: Knight_run_shield_1
   - first:
       213: -2114218972603513699
     second: Knight_idle_0
@@ -92,6 +92,33 @@ TextureImporter:
   - first:
       213: -7232600524240232993
     second: Knight_climb_1
+  - first:
+      213: -2114218972603513699
+    second: Knight_idle_0
+  - first:
+      213: -8035677405174726406
+    second: Knight_idle_1
+  - first:
+      213: 263105368767281767
+    second: Knight_shield
+  - first:
+      213: 3450997735807040617
+    second: Knight_sword_equip
+  - first:
+      213: 8232408098378994317
+    second: Knight_run_0
+  - first:
+      213: 6711311966061068734
+    second: Knight_run_1
+  - first:
+      213: 1320856842718640427
+    second: Knight_climb_0
+  - first:
+      213: 4419623587611197797
+    second: Knight_climb_1
+  - first:
+      213: 8050277750723066518
+    second: Knight_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -193,18 +220,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 14
-        y: 800
+        y: 1200
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a051e7b1e407bb0b0800000000000000
-      internalID: -5711848221618334454
+      spriteID: d948398cb09c8a2e0800000000000000
+      internalID: -2114218972603513699
       vertices: []
       indices: 
       edges: []
@@ -214,18 +241,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 212
-        y: 800
+        y: 1200
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07df6bd5bf27c4380800000000000000
-      internalID: -8985680732576350864
+      spriteID: af08dee89f98b7090800000000000000
+      internalID: -8035677405174726406
       vertices: []
       indices: 
       edges: []
@@ -235,18 +262,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 410
-        y: 800
+        y: 1200
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02a5fdd40b300ac60800000000000000
-      internalID: 7827260208125532704
+      spriteID: 76a3fdb50fcb6a300800000000000000
+      internalID: 263105368767281767
       vertices: []
       indices: 
       edges: []
@@ -256,18 +283,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 14
-        y: 400
+        y: 800
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3591b0a6ba6acbb40800000000000000
-      internalID: 5457420103614929235
+      spriteID: 96cb473182864ef20800000000000000
+      internalID: 3450997735807040617
       vertices: []
       indices: 
       edges: []
@@ -277,18 +304,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 212
-        y: 400
+        y: 800
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9d7a3d7badbfa570800000000000000
-      internalID: 8480205167599975839
+      spriteID: d82dded5c836f3270800000000000000
+      internalID: 8232408098378994317
       vertices: []
       indices: 
       edges: []
@@ -297,19 +324,19 @@ TextureImporter:
       name: Knight_run_1
       rect:
         serializedVersion: 2
-        x: 409
-        y: 400
+        x: 410
+        y: 800
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6e1ee665c1e21f00800000000000000
-      internalID: 1086178698101399146
+      spriteID: eb106e1dcae532d50800000000000000
+      internalID: 6711311966061068734
       vertices: []
       indices: 
       edges: []
@@ -319,18 +346,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 14
-        y: 0
+        y: 400
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15ac1213d4692c150800000000000000
-      internalID: 5891436520834976337
+      spriteID: b29736ddc40a45210800000000000000
+      internalID: 1320856842718640427
       vertices: []
       indices: 
       edges: []
@@ -340,18 +367,60 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 212
-        y: 0
+        y: 400
         width: 198
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdd5b56a424a0ab90800000000000000
-      internalID: -7232600524240232993
+      spriteID: 561c08c9c38a55d30800000000000000
+      internalID: 4419623587611197797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_run_shield_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 200
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa016e04212010d0800000000000000
+      internalID: -3454224475449390428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight_run_shield_1
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 0
+        width: 200
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30b9731888d035e0800000000000000
+      internalID: -1931806161188048838
       vertices: []
       indices: 
       edges: []

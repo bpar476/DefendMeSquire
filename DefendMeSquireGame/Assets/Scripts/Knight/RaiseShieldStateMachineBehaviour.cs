@@ -35,10 +35,6 @@ public class RaiseShieldStateMachineBehaviour : MyStateMachineBehaviour
 
     public override bool OnStateUpdate()
     {
-        if (hasFinished)
-        {
-            shield.SetActive(false);
-        }
         return hasFinished;
     }
 }

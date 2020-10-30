@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+
+    [SerializeField]
+    private GameObject creditsMenu;
+
+    [SerializeField]
+    private GameObject mainMenu;
+
     private bool hasLoadedLevel = false;
 
     public void StartGame()
@@ -19,5 +26,17 @@ public class MainMenu : MonoBehaviour
     public void QuitToDesktop()
     {
         Application.Quit();
+    }
+
+    public void OpenCredits()
+    {
+        mainMenu.SetActive(false);
+        creditsMenu.SetActive(true);
+    }
+
+    public void OpenMainMenu()
+    {
+        mainMenu.SetActive(true);
+        creditsMenu.SetActive(false);
     }
 }

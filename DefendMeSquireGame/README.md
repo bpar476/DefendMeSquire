@@ -6,7 +6,17 @@ Defend Me Squire was built with Unity 2019.3. It can be played with keyboard and
 
 This game was intended to be a learning experience of taking a Unity game from start to finish. There are a lot of things which could be improved and the game is very small. I'm moving on to something else after this but I hope this is a fun little demo and would love to hear some feedback.
 
+In Defend Me Squire, you play as the underappreciated squire of an arrogant, rude, and dismissive knight. It's your job to do whatever he wants which is mostly polishing his shield!
+
+Dodge arrows, traverse the tower, and clean that shield as you help the knight to save the king from the clutches of an evil wizard. Will you work together and save the king? Will you get any credit? Will the knight say thanks?
+
 Thanks for playing!
+
+## Controls
+
+Move - A, D
+Climb ladders - W, S
+Interact - E
 
 ## Acknowledgments
 

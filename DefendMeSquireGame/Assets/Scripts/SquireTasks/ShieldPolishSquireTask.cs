@@ -138,13 +138,14 @@ public class ShieldPolishSquireTask : MonoBehaviour
     {
         float initialY = transform.position.y;
         float targetLocation = initialY + 10f;
-        while ((targetLocation - transform.position.y) > 0.1f)
+        float startTime = Time.fixedTime;
+        while ((targetLocation - transform.position.y) >= 0.1f)
         {
-            transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, targetLocation, Time.fixedDeltaTime), transform.position.z);
+            transform.position = new Vector3(transform.position.x, Mathf.Lerp(initialY, targetLocation, Time.fixedTime - startTime), transform.position.z);
             yield return new WaitForFixedUpdate();
         }
 
-        GameObject.Destroy(this);
+        GameObject.Destroy(this.gameObject);
 
         yield return null;
     }

@@ -22,7 +22,6 @@ public class TriggerFlowchartStateMachineBehaviour : MyStateMachineBehaviour
 
     public override void OnStateEnter()
     {
-        Debug.Log("triggering block");
         hasTriggered = true;
         flowchartToTrigger.ExecuteBlock(flowchartBlock);
     }

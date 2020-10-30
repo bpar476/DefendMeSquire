@@ -130,7 +130,23 @@ public class ShieldPolishSquireTask : MonoBehaviour
 
     private void RenderCompletedTask()
     {
-        myRenderer.color = Color.magenta;
+        myRenderer.color = Color.white;
+        StartCoroutine(SendUpwardsToKnight());
+    }
+
+    private IEnumerator SendUpwardsToKnight()
+    {
+        float initialY = transform.position.y;
+        float targetLocation = initialY + 10f;
+        while ((targetLocation - transform.position.y) > 0.1f)
+        {
+            transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, targetLocation, Time.fixedDeltaTime), transform.position.z);
+            yield return new WaitForFixedUpdate();
+        }
+
+        GameObject.Destroy(this);
+
+        yield return null;
     }
 
     private void IncrementTime()

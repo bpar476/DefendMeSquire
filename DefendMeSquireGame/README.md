@@ -8,7 +8,7 @@ This game was intended to be a learning experience of taking a Unity game from s
 
 Thanks for playing!
 
-## Acknowldegments
+## Acknowledgments
 
 Defend Me Squire was made possible with the use of many free assets. Most are listed here:
 

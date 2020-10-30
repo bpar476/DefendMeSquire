@@ -6538,7 +6538,7 @@ MonoBehaviour:
   period: 2
   timerOffset: 0
   trajectory: {x: 1, y: -1}
-  fireVelocity: 5.5
+  fireVelocity: 5
   projectilePrefab: {fileID: 5497952614265301163, guid: dd5d11670b6b56946b31257487d0ab75,
     type: 3}
   gizmoColor: {r: 1, g: 0.19551288, b: 0, a: 1}
@@ -7321,7 +7321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d39586319dbf9e469d69148c838d94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  period: 4
+  period: 3
   timerOffset: 0.2
   trajectory: {x: 0, y: 0}
   fireVelocity: 8
@@ -57179,7 +57179,7 @@ PrefabInstance:
     - target: {fileID: 6387120618061472154, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.529999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6387120618061472155, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
@@ -57189,7 +57189,7 @@ PrefabInstance:
     - target: {fileID: 6387120618061472155, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: upperBound
-      value: 17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6387120618061472155, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
@@ -57224,7 +57224,7 @@ PrefabInstance:
     - target: {fileID: 7653156313539781165, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.73
+      value: -3.49
       objectReference: {fileID: 0}
     - target: {fileID: 7653156313539781165, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}

@@ -49,7 +49,7 @@ public class EnemyArcherBow : MonoBehaviour
             aimOffset = -1.0f;
         }
 
-        var playerX = playerPosition.x + aimOffset;
+        var playerX = Mathf.Max(playerPosition.x + aimOffset, -3f);
         var ourX = firer.transform.position.x;
         var arrowVelocityXComponent = (playerX - ourX) / ARROW_TRAVEL_DURATION;
         var playerY = playerPosition.y;

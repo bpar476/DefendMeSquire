@@ -18,6 +18,8 @@ Move - A, D
 Climb ladders - W, S
 Interact - E
 
+If at any point you get stuck, press Escape to reload from the last checkpoint.
+
 ## Acknowledgments
 
 Special thanks to my fiance Emily who supported me through development, and to my friends who tested the early prototype.

@@ -16224,6 +16224,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerBaseObjects
       objectReference: {fileID: 0}
+    - target: {fileID: 3464605667591480897, guid: 996ac3136a47067488be1d7065cb738a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464605667778249765, guid: 996ac3136a47067488be1d7065cb738a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3464605668360249559, guid: 996ac3136a47067488be1d7065cb738a,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size

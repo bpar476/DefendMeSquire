@@ -20,6 +20,8 @@ Interact - E
 
 ## Acknowledgments
 
+Special thanks to my fiance Emily who supported me through development, and to my friends who tested the early prototype.
+
 Defend Me Squire was made possible with the use of many free assets. Most are listed here:
 
 Sounds from Zapsplat.com

@@ -10,6 +10,8 @@ In Defend Me Squire, you play as the underappreciated squire of an arrogant, rud
 
 Dodge arrows, traverse the tower, and clean that shield as you help the knight to save the king from the clutches of an evil wizard. Will you work together and save the king? Will you get any credit? Will the knight say thanks?
 
+You can check it out [on Itch](https://benpartridge.itch.io/defend-me-squire)
+
 Thanks for playing!
 
 ## Controls
